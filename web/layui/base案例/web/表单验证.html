@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layui表单-表单验证</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../public/css/public.css">
+
+</head>
+
+<body>
+<div class="main-demo">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>简介</legend>
+    </fieldset>
+
+    <blockquote class="layui-elem-quote">
+        layui表单-表单验证
+        <br>
+        <a href="https://www.layui.com/doc/modules/form.html#verify" target="_blank">
+            layui表单-表单验证官方文档：https://www.layui.com/doc/modules/form.html#verify
+        </a>
+    </blockquote>
+
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>使用</legend>
+    </fieldset>
+
+    <blockquote class="layui-elem-quote">
+        <p>1.用在表单提交验证里。</p>
+        <p>2.注意使用场合，layui表单验证需要和lay-submit按钮配套使用。</p>
+        <p>3.建议不使用layui表单验证</p>
+
+    </blockquote>
+
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>案例演示</legend>
+    </fieldset>
+
+    <!-- 使用layui表单验证 -->
+    <div class="layui-card">
+        <div class="layui-card-header">使用layui表单验证</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="" lay-filter="form1">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户名</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="username" lay-verify="username" autocomplete="off"
+                               placeholder="请输入用户名" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-inline">
+                        <input type="password" name="pass" lay-verify="pass" placeholder="请输入密码" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+
+                <button type="reset" class="btn-green" id="btn_reset">重置</button>
+                <button type="button" class="btn-blue" lay-filter="submit1" lay-submit id="btn_submit">提交</button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- 不使用layui表单验证 -->
+    <div class="layui-card">
+        <div class="layui-card-header">不使用layui表单验证</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="" lay-filter="form2">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户名</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="username" autocomplete="off" placeholder="请输入用户名"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-inline">
+                        <input type="password" name="pass" placeholder="请输入密码" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+
+                <button type="reset" class="btn-green" id="btn_reset">重置</button>
+                <button type="button" class="btn-blue" id="btn_submit2">提交</button>
+
+            </form>
+        </div>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>关键代码</legend>
+    </fieldset>
+
+
+</div>
+
+<script src="../plugins/layui-v2.6.6/layui/layui.js"></script>
+<script src="../public/js/public.js"></script>
+
+<script>
+    //使用layui表单验证，只需在需要验证的input中添加lay-verify=“”就可以了
+    //layui还可以进行行内验证，以下layui自带得默认值
+    // required（必填项）
+    // phone（手机号）
+    // email（邮箱）
+    // url（网址）
+    // number（数字）
+    // date（日期）
+    // identity（身份证）
+    form.verify({
+        username: function (value, item) { //value：表单的值、item：表单的DOM对象
+            if (value == "") {
+                return '用户名不能为空';
+            }
+            if (!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+                return '用户名不能有特殊字符';
+            }
+            if (/(^\_)|(\__)|(\_+$)/.test(value)) {
+                return '用户名首尾不能出现下划线\'_\'';
+            }
+            if (/^\d+\d+\d$/.test(value)) {
+                return '用户名不能全为数字';
+            }
+
+            //如果不想自动弹出默认提示框，可以直接返回 true，这时你可以通过其他任意方式提示（v2.5.7 新增）
+            if (value === 'xxx') {
+                layer.msg("用户名不能为敏感词")
+                return true;
+            }
+        }
+
+        //我们既支持上述函数式的方式，也支持下述数组的形式
+        //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+        ,
+        pass: [
+            /^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'
+        ]
+    });
+
+
+    form.on('submit(submit1)', function (data) {
+        console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
+        console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
+        console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+        let form_data = data.field;
+        layer.alert(JSON.stringify(form_data));
+        return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+    });
+
+    $("#btn_submit2").on("click", function () {
+        let form_data = form.val("form2");
+
+        if (form_data.username == "") {
+            layer.msg("用户名不能为空");
+            return false;
+        }
+        if (form_data.pass == "") {
+            layer.msg("密码不能为空");
+            return false;
+        }
+
+        layer.alert(JSON.stringify(form_data));
+    })
+</script>
+</body>
+
+</html>

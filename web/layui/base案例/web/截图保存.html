@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面截图工具-html2canvas</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../public/css/public.css">
+    <style type="text/css">
+        .box-2 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+        }
+
+        .box-2 img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="main-demo">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>说明</legend>
+    </fieldset>
+
+    <blockquote class="layui-elem-quote">
+        <p> 页面截图工具-html2canvas</p>
+        <p><a href="http://html2canvas.hertzen.com/" target="_blank">官方文档：http://html2canvas.hertzen.com/</a></p>
+    </blockquote>
+
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>使用</legend>
+    </fieldset>
+
+    <blockquote class="layui-elem-quote">
+        <p>1.根据html2canvas官方文档的介绍，html2canvas库的工作原理并不是真正的“截图”，
+            而是读取网页上的目标DOM节点的信息来绘制canvas，所以它并不支持所有的css属性。</p>
+        <p>2.注意：给要生成canvas的DOM中包含的每一个< img>标签添加crossorigin="anonymous"属性。</p>
+        <p>3.注意：添加useCORS:true属性。</p>
+        <p>4.注意：由于该插件存在功能缺陷，使用时注意可行性，后期会寻找更优的解决方案。</p>
+        <p>5.注意：截图时需要滚动条置顶。</p>
+    </blockquote>
+    <!-- 普通按钮 -->
+    <div class="layui-card" id="box_1">
+        <div class="layui-card-header">普通按钮</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="" lay-filter="example">
+                <button type="button" class="btn-blue"><i class="iconfont">&#xe60b;</i>图标按钮</button>
+                <button type="button" class="btn-blue">蓝色按钮</button>
+                <button type="button" class="btn-green">绿色按钮</button>
+                <button type="button" class="btn-orange">橙色按钮</button>
+                <button type="button" class="btn-red">红色按钮</button>
+                <button type="button" class="btn-blue-font">蓝字按钮</button>
+                <button type="button" class="btn-green-font">绿字按钮</button>
+                <button type="button" class="btn-orange-font">橙字按钮</button>
+                <button type="button" class="btn-red-font">红字按钮</button>
+                <button type="button" class="btn-disabled" title="该功能已被禁用" disabled>禁用按钮</button>
+            </form>
+        </div>
+    </div>
+    <!-- 演示 -->
+    <div class="layui-card">
+        <div class="layui-card-header">演示</div>
+        <div class="layui-card-body">
+            <button type="button" class="btn-blue" id="btn_1">生成截图</button>
+            <button type="button" class="btn-blue" id="btn_2">下载截图</button>
+            <div class="box-2" id="box_2">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../plugins/layui-v2.6.6/layui/layui.js"></script>
+<script src="../public/js/public.js"></script>
+<script src="./js/html2canvas.js"></script>
+<script>
+    $("#btn_1").on("click", function () {
+        document.documentElement.scrollTop = 0;
+        html2canvas($("#box_1")[0], {
+            allowTaint: true, //允许污染
+            useCORS: true, //允许图片跨域
+        }).then(canvas => {
+            $("#box_2").html($(CanvasToImage(canvas)))
+        });
+    })
+    $("#btn_2").on("click", function () {
+        html2canvas($("#box_1")[0], {
+            allowTaint: true, //允许污染
+            useCORS: true, //允许图片跨域
+        }).then(canvas => {
+            downLoad(saveAsPNG(canvas));
+        });
+    })
+
+    function CanvasToImage(canvas, pc_width, pc_height) {
+        var newImg = document.createElement("img");
+        newImg.src = canvas.toDataURL("image/png");
+        return newImg;
+    }
+
+    // 保存成png格式的图片
+    function saveAsPNG(canvas) {
+        return canvas.toDataURL("image/png");
+    }
+
+    // 保存成jpg格式的图片
+    function saveAsJPG(canvas) {
+        return canvas.toDataURL("image/jpeg");
+    }
+
+    function downLoad(url) {
+        console.log(url)
+        var oA = document.createElement("a");
+        oA.download = '截图'; // 设置下载的文件名，默认是'下载'
+        oA.href = url;
+        document.body.appendChild(oA);
+        oA.click();
+        oA.remove(); // 下载之后把创建的元素删除
+    }
+</script>
+
+
+</body>
+
+</html>

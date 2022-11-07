@@ -1,0 +1,180 @@
+{
+    "code": 200,
+    "msg": "请求成功",
+    "obj": [
+        {
+            "name": "电力作业面安全管控",
+            "url": "",
+            "children": [
+                {
+                    "name": "作业现场监督",
+                    "url": "",
+                    "children": [
+                        {
+                            "name": "人员实时位置显示",
+                            "url": "../power_operation/site_supervision/Personnel_location_display.html",
+                            "children": []
+                        },
+                        {
+                            "name": "人员历史轨迹显示",
+                            "url": "../power_operation/site_supervision/Personnel_history.html",
+                            "children": []
+                        },
+                        {
+                            "name": "人员调度方案生成",
+                            "url": "../power_operation/site_supervision/Personnel_scheduling.html",
+                            "children": []
+                        },
+                        {
+                            "name": "人员出入记录查看",
+                            "url": "../power_operation/site_supervision/Personnel_access.html",
+                            "children": []
+                        },
+                        {
+                            "name": "车辆实时位置显示",
+                            "url": "../power_operation/site_supervision/vehicle_location_display.html",
+                            "children": []
+                        },
+                        {
+                            "name": "车辆历史轨迹显示",
+                            "url": "../power_operation/site_supervision/vehicle_history.html",
+                            "children": []
+                        },
+                        {
+                            "name": "车辆出入记录查看",
+                            "url": "../power_operation/site_supervision/vehicle_record.html",
+                            "children": []
+                        },
+                        {
+                            "name": "车辆调度方案生成",
+                            "url": "../power_operation/site_supervision/vehicle_scheduling.html",
+                            "children": []
+                        },
+                        {
+                            "name": "场所出入记录查看",
+                            "url": "../power_operation/site_supervision/Site_access.html",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "稽查队伍管理",
+                    "url": "",
+                    "children": [
+                        {
+                            "name": "稽查队伍配置",
+                            "url": "../power_operation/group_management/Team_configuration.html",
+                            "children": []
+                        },
+                        {
+                            "name": "人员历史轨迹显示",
+                            "url": "../power_operation/group_management/Realtime_location.html",
+                            "children": []
+                        },
+                        {
+                            "name": "稽查队伍历史轨迹显示",
+                            "url": "../power_operation/group_management/Historical_track.html",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "应急演练可视化管理",
+            "url": "",
+            "children": [
+                {
+                    "name": "应急通讯记录",
+                    "url": "",
+                    "children": [
+                        {
+                            "name": "终端信息展示",
+                            "url": "../emergency_drill/Communication_record/information_display.html",
+                            "children": []
+                        },
+                        {
+                            "name": "终端信息管理",
+                            "url": "../system_configuration/service_management/service_management_terminal.html?type=3002",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "应急预案演练可视化",
+                    "url": "",
+                    "children": [
+                        {
+                            "name": "应急队伍管理",
+                            "url": "../emergency_drill/emergency_plan/emergency_team_manage.html",
+                            "children": []
+                        },
+                        {
+                            "name": "应急预案管理",
+                            "url": "../emergency_drill/emergency_plan/emergency_plan_manage.html",
+                            "children": []
+                        },
+                        {
+                            "name": "应急演练可视化",
+                            "url": "../emergency_drill/emergency_plan/emergency_plan_practice.html",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "无信号区应急通讯记录",
+            "url": "",
+            "children": [
+                {
+                    "name": "终端信息管理",
+                    "url": "../system_configuration/service_management/service_management_terminal.html?type=3003",
+                    "children": []
+                },
+                {
+                    "name": "终端位置管理",
+                    "url": "../emergency_communication_record/terminal_location_management.html",
+                    "children": []
+                },
+                {
+                    "name": "终端信息展示",
+                    "url": "../emergency_communication_record/terminal_information_display.html",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "系统配置",
+            "url": "",
+            "children": [
+                {
+                    "name": "人员信息管理",
+                    "url": "../system_configuration/personnel_information_management.html",
+                    "children": []
+                },
+                {
+                    "name": "车辆信息管理",
+                    "url": "../system_configuration/vehicle_information_management.html",
+                    "children": []
+                },
+                {
+                    "name": "服务管理",
+                    "url": "",
+                    "children": [
+                        {
+                            "name": "终端设备",
+                            "url": "../system_configuration/service_management/service_management_terminal.html",
+                            "children": []
+                        },
+                        {
+                            "name": "图层配置",
+                            "url": "../system_configuration/service_management/service_management_layers.html",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

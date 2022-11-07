@@ -1,0 +1,86 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.required {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 2px;
+}
+.choice-starhide{
+    visibility: hidden;
+}
+.box{
+    width: calc(~"100% - 40px") ;
+    padding: 20px;
+    background-color: rgb(218, 218, 238);
+    .header{
+        width: 100%;
+        background-color: white;
+        height: 60px;
+        line-height: 60px;
+        padding-top:20px ;
+        .layui-form{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content:space-between;
+            .layui-form-item{
+                .layui-form-label{
+                    width: 50px;
+                }
+                .long{
+                    width: 100px;
+                    .layui-input-inline{
+                        width: 210px;
+                    }
+                }
+                .short{
+                    width: 90px;
+                }
+            }
+            .btn-box{
+                width: 25%;
+                display: flex;
+                flex-wrap: nowrap;
+                -ms-flex-direction: row;
+                justify-content: flex-end;
+                margin-right: 20px;
+              
+                button{
+                    min-width: 80px;
+                    outline: 0;
+                    display: inline-block;
+                    height: 38px;
+                    line-height: 38px;
+                    padding: 0 18px;
+                    white-space: nowrap;
+                    text-align: center;
+                    font-size: 14px;
+                    border: none;
+                    border-radius: 2px;
+                    cursor: pointer;
+                    vertical-align: top;
+                    margin-left: 10px;
+                    margin-bottom: 10px;
+                }
+                .btn-blue{
+                    color: #fff;
+                    background-color: blue;
+                }
+                .btn-green{
+                    color: #fff;
+                    background-color: green;
+                }
+            }
+        }
+    }
+    .content{
+        width: cala(~"100% - 40px");
+        margin-top: 20px;
+        padding: 20px;
+        min-height: 500px;
+        background-color: white;
+    }
+}

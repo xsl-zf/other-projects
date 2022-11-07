@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 公共按钮样式 */
+.btn {
+    outline: 0;
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* 酷黑色 */
+.btn-black {
+    color: #fff;
+    background-color: black;
+}
+
+/* 绿色按钮 */
+.btn-green {
+    color: #fff;
+    background-color: #009688;
+}
+
+/* 蓝色按钮 */
+.btn-blue {
+    color: #fff;
+    background: #1890ff;
+}
+
+/* 白色按钮 */
+.btn-white {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+/* 黄色按钮 */
+.btn-orange {
+    background: #FFA940;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* 红色按钮 */
+.btn-red {
+    background: #FF5722;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* 蓝色字体按钮 */
+.btn-blue-font {
+    background: #e6f7ff;
+    border: 1px solid #5cc1ff;
+    color: #1890FF;
+}
+
+/* 绿色字体按钮 */
+.btn-green-font {
+    background: #F6FFED;
+    border: 1px solid #8CDE4D;
+    color: #52C41A;
+}
+
+/* 黄色字体按钮 */
+.btn-orange-font {
+    background: #fffbe6;
+    border: 1px solid #f3b25f;
+    color: #FA9514;
+}
+
+/* 红色字体按钮 */
+.btn-red-font {
+    background: #fff1f0;
+    border: 1px solid #ff7770;
+    color: #EF232E;
+}

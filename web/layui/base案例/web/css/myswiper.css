@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #182F5D;
+    color: #fff;
+}
+
+.box-item {
+    position: relative;
+    width: 700px;
+    height: 340px;
+    margin: 40px;
+}
+
+.title {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px #ccc solid;
+    width: 100%;
+    height: 100%;
+
+}
+
+#div1 .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+#div1 .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+#div2 .swiper-container {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#div2 .swiper-container-free-mode > .swiper-wrapper {
+    -webkit-transition-timing-function: linear;
+    /*之前是ease-out*/
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    margin: 0 auto;
+}
+
+#div2 .text {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #16a099;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+#div3 .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+#div3 .swiper-wrapper {
+    /* 通过改变animation-timing-function 制作弹性切换效果 */
+    transition: 2s cubic-bezier(0.68, -0.4, 0.27, 1.34) 0.2s;
+}
+
+#div3 .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+#div4 .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+#div4 .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+/*轮播图分页器*/
+#div4 .swiper-pagination-bullet {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background: #3e3e3e;
+    opacity: 1;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#div4 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+
+    margin: 0 2px;
+}
+
+#div4 .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 20px;
+}
+
+#div4 .swiper-pagination-bullet-active {
+    color: #fff;
+    background: #b61b1f;
+}
+
+/*轮播图翻页按钮*/
+#div4 .swiper-button-next {
+    right: 3%;
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    background: url(./images/arrow-right.png) no-repeat !important;
+    background-size: 100% 100%;
+
+
+}
+
+
+#div4 .swiper-button-prev {
+    left: 3%;
+    width: 32px;
+    height: 32px;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    background: url(./images/arrow-left.png) no-repeat !important;
+    background-size: 100% 100%;
+
+}
+
+/* #div4 .swiper-button-next,
+    #div4 .swiper-button-prev {
+        visibility: hidden;
+    }
+
+    #div4:hover .swiper-button-next,
+    #div4:hover .swiper-button-prev {
+        visibility: visible;
+    } */
+
+#div4 .swiper-button-next:after,
+#div4 .swiper-button-prev:after {
+    color: transparent;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#div4 .swiper-button-disabled {
+    opacity: 0;
+}
+
+#div5 .swiper-container {
+    width: 100%;
+    height: 100%;
+
+}
+
+#div5 .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+    transform: scale(0.8);
+}
+
+#div5 .ani-slide img {
+    transform: scale(1);
+}
+
+#div6 .swiper-container {
+    width: 100%;
+    height: 100%;
+
+}
+
+#div6 .swiper-slide {
+    width: calc((100% - 60px) / 3);
+    height: calc((100% - 30px) / 2);
+
+}
+
+#div6 .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+#div7 .swiper-container {
+    width: 100%;
+    height: 100%;
+
+}
+
+#div7 .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+#div7 .swiper-slide .swiper-container-2 {
+    width: 100%;
+    height: 100%;
+}
+
+#div7 .swiper-slide .swiper-container-2 .swiper-pagination-bullets {
+    right: 50px;
+}
+
+#div8 .swiper-container {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#div8 .text {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #16a099;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+#div8 .refresh {
+    position: absolute;
+    line-height: 100px;
+    bottom: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+#div8 .loadmore {
+    position: absolute;
+    line-height: 20px;
+    top: 100%;
+    text-align: center;
+    width: 100%;
+}

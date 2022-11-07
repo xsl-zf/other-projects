@@ -1,0 +1,83 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.required {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 2px;
+}
+.choice-starhide {
+  visibility: hidden;
+}
+.box {
+  width: calc(100% - 40px);
+  padding: 20px;
+  background-color: #dadaee;
+}
+.box .header {
+  width: 100%;
+  background-color: white;
+  height: 60px;
+  line-height: 60px;
+  padding-top: 20px ;
+}
+.box .header .layui-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.box .header .layui-form .layui-form-item .layui-form-label {
+  width: 50px;
+}
+.box .header .layui-form .layui-form-item .long {
+  width: 100px;
+}
+.box .header .layui-form .layui-form-item .long .layui-input-inline {
+  width: 210px;
+}
+.box .header .layui-form .layui-form-item .short {
+  width: 90px;
+}
+.box .header .layui-form .btn-box {
+  width: 25%;
+  display: flex;
+  flex-wrap: nowrap;
+  -ms-flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.box .header .layui-form .btn-box button {
+  min-width: 80px;
+  outline: 0;
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 18px;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  vertical-align: top;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.box .header .layui-form .btn-box .btn-blue {
+  color: #fff;
+  background-color: blue;
+}
+.box .header .layui-form .btn-box .btn-green {
+  color: #fff;
+  background-color: green;
+}
+.box .content {
+  width: cala(100% - 40px);
+  margin-top: 20px;
+  padding: 20px;
+  min-height: 500px;
+  background-color: white;
+}

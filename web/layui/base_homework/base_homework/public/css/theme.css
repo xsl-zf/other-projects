@@ -1,0 +1,6 @@
+:root {
+  --public-text-color: #fff;
+  --public-bg-color: linear-gradient(211deg, #00b3ff 0%, #1890ff 100%);
+  --public-layui-text: #1890FF;
+  --public-layui-bg: #1890FF;
+}

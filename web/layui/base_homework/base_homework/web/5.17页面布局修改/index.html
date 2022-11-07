@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/highcharts.js"></script>
+    <script src="./js/highcharts-3d.js"></script>
+    <script src="./js/cylinder.js"></script>
+    <script src="./js/highcharts-more.js"></script>
+    <!-- <script src="./js/bingtu.js"></script> -->
+
+    <link rel="stylesheet" href="./css/index.css">
+   
+</head>
+
+<body>
+    <div class="main">
+        <div class="title">
+            <h1>太原市城市综合管理服务平台公众服务</h1>
+        </div>
+        <div class="message-box">
+            <div class="time">
+                <i class="icon iconfont">&#xe88c;</i>
+                <span class="time_num year"></span>
+                <span>年</span>
+                <span class="time_num month"></span>
+                <span>月</span>
+                <span class="time_num day"></span>
+                <span>日</span>
+                <span class="margin_span"></span>
+                <span class="week"></span>
+                <span class="time_num hms"></span>
+            </div>
+            <div class="weather">
+                <i class="icon iconfont">&#xe88d;</i>
+                <span>太原市</span>
+                <span class="margin_span"></span>
+                <i class="icon iconfont">&#xe88a;</i>
+                <span>晴</span>
+                <span class="time_num">34℃</span>
+                <span class="margin_span"></span>
+                <i class="icon iconfont">&#xe88b;</i>
+                <span class="time_num">admin</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="chart-one">
+                <div class="module_title">
+                    <i class="icon iconfont">&#xe887;</i>
+                    <span>问题来源类别统计</span>
+                </div>
+                <div class="chart-one-content">
+                    <div class="content-left">
+
+                        <div id="chart1" class="chart1" ></div>
+
+                    </div>
+                    <div class="line"></div>
+                    <div class="content-right">
+                        <ul class="date-box">
+                            <li class="active">日</li>
+                            <li>周</li>
+                            <li>月</li>
+                            <li>年</li>
+                        </ul>
+                        <!--日-->
+                        <div class="content1" id="content-day">
+
+                            <div class="content1-title">
+                                <div id="onetitle">市政府便民办转办</div>
+                                <ul>
+                                    <li class="active">事件</li>
+                                    <li>部件</li>
+                                </ul>
+                            </div>
+                            <!--事件-->
+                            <div class="content1-content" id="day-shijian">
+                                <div class="item1">
+                                    <span class="itemname">上报数</span>
+                                    <span class="itemnum" id="shangbaoshu">0</span>
+                                </div>
+                                <div class="item2">
+                                    <div class="item2-1">
+                                        <span class="itemname">受理数</span>
+                                        <span class="itemnum" id="shoulishu">0</span>
+                                    </div>
+                                    <div class="item2-2">
+                                        <span class="itemname">立案数</span>
+                                        <span class="itemnum" id="lianshu">0</span>
+                                    </div>
+                                </div>
+                                <div class="item1">
+                                    <span class="itemname">派遣数</span>
+                                    <span class="itemnum" id="paiqianshu">0</span>
+                                </div>
+                                <div class="item3">
+                                    <div class="item3-left">
+                                        <div class="item3-left1">
+                                            <span class="itemname">应结案数</span>
+                                            <span class="itemnum" id="yjas">0</span>
+                                        </div>
+                                        <div class="item3-left1">
+                                            <span class="itemname">结案数</span>
+                                            <span class="itemnum" id="jas">0</span>
+                                        </div>
+                                        <div class="item3-left1">
+                                            <span class="itemname">按期结案数</span>
+                                            <span class="itemnum" id="aqjas">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="item3-right">
+                                        <div class="item3-right1">
+                                            <span class="per" id="jal">0</span>
+                                            <img src="./images/jieanlv.png" alt="">
+                                            <span class="name">结案率</span>
+                                        </div>
+                                        <div class="item3-right2">
+                                            <span class="per" id="aqjal">0</span>
+                                            <img src="./images/anqijieanlv.png" alt="">
+                                            <span class="name">按期结案率</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--部件-->
+                            <div class="content1-content" id="day-bujian" style="display: none;">
+                                <div class="item1">
+                                    <span class="itemname">上报数</span>
+                                    <span class="itemnum" id="shangbaoshu2">0</span>
+                                </div>
+                                <div class="item2">
+                                    <div class="item2-1">
+                                        <span class="itemname">受理数</span>
+                                        <span class="itemnum" id="shoulishu2">0</span>
+                                    </div>
+                                    <div class="item2-2">
+                                        <span class="itemname">立案数</span>
+                                        <span class="itemnum" id="lianshu2">0</span>
+                                    </div>
+                                </div>
+                                <div class="item1">
+                                    <span class="itemname">派遣数</span>
+                                    <span class="itemnum" id="paiqianshu2">0</span>
+                                </div>
+                                <div class="item3">
+                                    <div class="item3-left">
+                                        <div class="item3-left1">
+                                            <span class="itemname">应结案数</span>
+                                            <span class="itemnum" id="yjas2">0</span>
+                                        </div>
+                                        <div class="item3-left1">
+                                            <span class="itemname">结案数</span>
+                                            <span class="itemnum" id="jas2">0</span>
+                                        </div>
+                                        <div class="item3-left1">
+                                            <span class="itemname">按期结案数</span>
+                                            <span class="itemnum" id="aqjas2">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="item3-right">
+                                        <div class="item3-right1">
+                                            <span class="per" id="jql2">0</span>
+                                            <img src="./images/jieanlv.png" alt="">
+                                            <span class="name">结案率</span>
+                                        </div>
+                                        <div class="item3-right2">
+                                            <span class="per" id="aqjal2">0</span>
+                                            <img src="./images/anqijieanlv.png" alt="">
+                                            <span class="name">按期结案率</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--12345热线-->
+                        <div class="content1" id="rexian" style="display: none;">
+
+                            <div class="content1-title">
+                                <div>12345热线</div>
+                                <ul>
+                                    <li class="active">事件</li>
+                                    <li>部件</li>
+                                </ul>
+                            </div>
+                            <div class="content1-content-rexian">
+
+                                <div class="rexian-1">
+                                    <span class="num">123</span>
+                                    <img src="./images/tonghualiang.png" alt="">
+                                    <span class="name">通话量</span>
+                                </div>
+
+                                <div class="rexian-2">
+                                    <span class="num">123</span>
+                                    <img src="./images/huchuliang.png" alt="">
+                                    <span class="name">呼出量</span>
+                                </div>
+
+                                <div class="rexian-3">
+                                    <span class="num">123</span>
+                                    <img src="./images/pingjuntonghuashijian.png" alt="">
+                                    <span class="name">平均通话时长</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--微信公众号-->
+                        <div class="content1" id="wxgzh" style="display: none;">
+
+                            <div class="content1-title">
+                                <div>微信公众号</div>
+                                <!-- <ul>
+                                    <li class="active">事件</li>
+                                    <li>部件</li>
+                                </ul> -->
+                            </div>
+                            <div class="content1-content-rexian">
+                                <div class="rexian-1">
+                                    <span class="num">123</span>
+                                    <img src="./images/fanyinwenti.png" alt="">
+                                    <span class="name">反应问题</span>
+                                </div>
+
+                                <div class="rexian-2">
+                                    <span class="num">123</span>
+                                    <img src="./images/zixuntousu.png" alt="">
+                                    <span class="name">咨询投诉</span>
+                                </div>
+
+                                <div class="rexian-3">
+                                    <span class="num">123</span>
+                                    <img src="./images/jianyanxiance.png" alt="">
+                                    <span class="name">建言献策</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="chart-two">
+                <div class="module_title">
+                    <i class="icon iconfont">&#xe887;</i>
+                    <span>问题来源区域统计</span>
+                </div>
+                <div class="con-box">
+                    <div class="all-box">
+                        <div class="left-box">
+                            <div class="title">问题上报数量</div>
+                            <div class="ul-box">
+                                <ul class="ul1">
+                                    <li>
+                                        <div class="li-box bg1">
+                                            <div class="characters">万柏林区</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num1">0</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-box bg2">
+                                            <div class="characters">阳曲县</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num2">0</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-box bg3">
+                                            <div class="characters">尖草坪区</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num3">0</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-box bg4">
+                                            <div class="characters">杏花岭区</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num4">0</div>
+                                        </div>
+                                    </li>
+                                    <!-- </ul>
+
+                            <ul  class="ul2"> -->
+                                    <li>
+                                        <div class="li-box bg5">
+                                            <div class="characters">迎泽区</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num5">0</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-box bg6">
+                                            <div class="characters">小店区</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num6">0</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-box bg7">
+                                            <div class="characters">清徐县</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num7">0</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-box bg8">
+                                            <div class="characters">晋源区</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num8">0</div>
+                                        </div>
+                                    </li>
+                                    <!-- </ul>
+                            <ul class="ul3"> -->
+                                    <li>
+                                        <div class="li-box bg9">
+                                            <div class="characters">古交市</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num9">0</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-box bg10">
+                                            <div class="characters">娄烦县</div>
+                                            <!-- <img src="../../images/yangqu.png" alt=""> -->
+
+                                            <div class="num" id="num10">0</div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="right-box">
+                            <div class="date">
+                                <ul>
+                                    <li class="date-li active-li">日</li>
+                                    <li class="date-li">周</li>
+                                    <li class="date-li">月</li>
+                                    <li class="date-li">年</li>
+                                </ul>
+                            </div>
+                            <div class="area">万柏林区 </div>
+                            <div class="chart">
+
+
+                                <div id="chart2" class="chart2"></div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-three">
+                <div class="module_title">
+                    <i class="icon iconfont">&#xe888;</i>
+                    <span>问题来源类别统计</span>
+                </div>
+                <div class="three-body">
+                    <div class="body-top">
+                        <div class="select">
+                            <form class="layui-form" action="">
+                                <select name="city" lay-filter="testId3" id="selectarea3">
+                                    <option value="万柏林区">万柏林区</option>
+                                    <option value="古交市">古交市</option>
+                                    <option value="太原中北高新技术产业开发区">太原中北高新技术产业开发区</option>
+                                    <option value="小店区">小店区</option>
+                                    <option value="尖草坪区">尖草坪区</option>
+                                    <option value="山西转型综合改革示范区">山西转型综合改革示范区</option>
+                                    <option value="晋源区">晋源区</option>
+                                    <option value="杏花岭区">杏花岭区</option>
+                                    <option value="清徐县">清徐县</option>
+                                    <option value="迎泽区">迎泽区</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="btn-switch3" id="time3">
+                            <div class="btn-switch2 data-day">日</div>
+                            <div class="data-week">周</div>
+                            <div class="data-moon">月</div>
+                            <div class="data-year">年</div>
+                        </div>
+                    </div>
+                    <div class="body-bottom">
+                        <div class="bottom-left">
+                            <div class="left-top">
+                                <p class="sbs">上报数</p>
+                                <p class="num" id="sbs3"></p>
+                            </div>
+                            <div class="left-list">
+                                <div class="list1">
+                                    <p class="num" id="jdysbs3"></p>
+                                    <img src="./images/jdysb.png" alt="" />
+                                    <p class="name">监督员上报</p>
+                                </div>
+                                <div class="list2">
+                                    <p class="num" id="zxczsbs3"></p>
+                                    <img src="./images/zxczsb.png" alt="" />
+                                    <p class="name">自行处置上报</p>
+                                </div>
+                                <div class="list3">
+                                    <p class="num" id="ggjbs3"></p>
+                                    <img src="./images/ggjb.png" alt="" />
+                                    <p class="name">公共举报</p>
+                                </div>
+                                <div class="list4">
+                                    <p class="num" id="yxsbs3"></p>
+                                    <img src="./images/yxsb.png" alt="" />
+                                    <p class="name">有限上报</p>
+                                </div>
+                            </div>
+                            <div class="left-list2">
+                                <div class="list-left">
+                                    <div class="img">
+                                        <img src="./images/las.png" alt="" />
+                                    </div>
+                                    <div class="num">
+                                        <p class="nump" id="las3"></p>
+                                        <p class="namep">立案数</p>
+                                    </div>
+                                </div>
+                                <div class="list-right">
+                                    <div class="img">
+                                        <img src="./images/lal.png" alt="" />
+                                    </div>
+                                    <div class="num">
+                                        <p class="nump" id="lal3">%</p>
+                                        <p class="namep">立案率</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="left-bottom">
+                                <p class="yjas">应结案数</p>
+                                <p class="num" id="yjas3"></p>
+                            </div>
+                        </div>
+                        <div class="bottom-right">
+                            <div class="right-list">
+                                <div class="list1">
+                                    <div>
+                                        <img src="./images/iconblue.png" alt="">
+                                        <p id="ja3"></p>
+                                    </div>
+                                    <p class="name">结案</p>
+                                </div>
+                                <div class="list2">
+                                    <div>
+                                        <img src="./images/iconred.png" alt="">
+                                        <p id="jabj3"></p>
+                                    </div>
+                                    <p class="name">结案办结</p>
+                                </div>
+                                <div class="list3">
+                                    <div>
+                                        <img src="./images/iconblue.png" alt="">
+                                        <p id="jabkh3"></p>
+                                    </div>
+                                    <p class="name">结案不考核</p>
+                                </div>
+                                <div class="list4">
+                                    <div>
+                                        <img src="./images/iconred.png" alt="">
+                                        <p id="jawbj3"></p>
+                                    </div>
+                                    <p class="name">结案未办结</p>
+                                </div>
+                            </div>
+                            <div class="right-list2">
+                                <p class="jal">结案率</p>
+                                <p class="num" id="jal3">%</p>
+                            </div>
+                            <div class="right-list3">
+                                <p class="jal">按时结案数</p>
+                                <p class="num" id="asjas3"></p>
+                            </div>
+                            <div class="right-list4">
+                                <p class="jal">按期结案率</p>
+                                <p class="num" id="aqjal3">%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-four">
+                <div class="module_title">
+                    <i class="icon iconfont">&#xe887;</i>
+                    <span>高发小类TOP10-区域统计</span>
+                </div>
+                <div class="content-div">
+                    <div class="wrap">
+                        <form class="layui-form" action="">
+                            <select name="city" lay-filter="testId" id="city">
+                                <option value="万柏林区">万柏林区</option>
+                                <option value="古交市">古交市</option>
+                                <option value="太原中北高新技术产业开发区">太原中北高新技术产业开发区</option>
+                                <option value="小店区">小店区</option>
+                                <option value="晋源区">晋源区</option>
+                                <option value="清徐县">清徐县</option>
+                                <option value="综改区唐槐产业园区">综改区唐槐产业园区</option>
+                                <option value="综改区学府产业园区">综改区学府产业园区</option>
+                                <option value="综改区武宿保税园区">综改区武宿保税园区</option>
+                                <option value="综改区潇河产业园区">综改区潇河产业园区</option>
+                                <option value="综改区科技创新园区">综改区科技创新园区</option>
+                                <option value="综改区阳曲产业园区">综改区阳曲产业园区</option>
+                                <option value="迎泽区">迎泽区</option>
+                                <option value="长风文化商务区">长风文化商务区</option>
+
+                            </select>
+                        </form>
+                        <div class="btn-switch" id="time">
+                            <div class="btn-switch1 data-day">日</div>
+                            <div class="data-week">周</div>
+                            <div class="data-moon">月</div>
+                            <div class="data-year">年</div>
+                        </div>
+                    </div>
+
+                    <div class="footer">
+
+
+                        <div id="chart3" class="chart3"></div>
+
+
+                        <div class="footer-right">
+                            <div class="up-write">
+                                <div class="jg" id="dw-four">乱堆物堆料</div>
+                            </div>
+                            <div class="up-footer">
+                                <div class="footer-one">
+                                    <div class="text-one">上报数</div>
+                                    <div class="count-one" id="sbs-four">233</div>
+                                </div>
+                                <div class="footer-two">
+                                    <div class="body-two">
+                                        <div class="text-one">受理数</div>
+                                        <div class="count-two" id="sls-four">233</div>
+                                    </div>
+                                    <div class="body-two">
+                                        <div class="text-one">立案数</div>
+                                        <div class="count-two" id="las-four">233</div>
+                                    </div>
+                                </div>
+                                <div class="footer-one">
+                                    <div class="text-one">派遣数</div>
+                                    <div class="count-three" id="pqs-four">233</div>
+                                </div>
+                                <div class="footer-four">
+                                    <div class="blue-box">
+                                        <!-- <img src="../images/iconblue.png" alt=""> -->
+                                        <div class="nums num-1" id="jal-four">50%</div>
+                                        <div class="counts">结案率</div>
+
+                                    </div>
+                                    <div class="pink-box">
+                                        <!-- <img src="../images/iconred.png" alt=""> -->
+                                        <div class="nums num-2" id="aqjal-four">50%</div>
+                                        <div class="counts">按期结案率</div>
+
+                                    </div>
+
+                                    <div class="text-box">
+                                        <div class="text-two">
+                                            <div class="text-one">应结案数</div>
+                                            <div class="count-two" id="yjas-four">233</div>
+                                        </div>
+                                        <div class="text-two">
+                                            <div class="text-one">结案数</div>
+                                            <div class="count-two" id="jas-four">233</div>
+                                        </div>
+                                        <div class="text-two">
+                                            <div class="text-one">按期结案数</div>
+                                            <div class="count-two" id="aqjas-four">233</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    Highcharts.chart('chart3', {
+    title: {
+        floating: true,
+        text: `停车场`,
+        verticalAlign: "bottom",
+        y: 20,
+        style: {
+            color: "#fff",
+            fontSize: "16px",
+            lineHeight: "16px"
+        }
+    },
+    subtitle: {
+        floating: true,
+        text: `40%<br>繁忙`,
+        verticalAlign: "middle",
+        y: 20,
+        style: {
+            color: "#F75000",
+            fontSize: "16px",
+            lineHeight: "16px"
+        }
+    },
+    chart: {
+        type: 'pie',
+        marginTop: 40,
+        marginBottom: 40,
+        backgroundColor: 'transparent' // 图形背景颜色
+    },
+    colors: ['#EA5514', '#389CF4', '#F4B32D', ],
+    tooltip: {
+        headerFormat: '{series.name}<br>', //标题格式
+        pointFormat: '{point.name}:{point.y}'
+    },
+    legend: {
+        enabled: true, //图例开关
+        align: 'center', //对齐方式：left，center，right
+        layout: 'horizontal', //布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
+        verticalAlign: 'top', //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
+        padding: 0,
+        margin: 0,
+        itemMarginTop: 15,
+        itemDistance: 2, //水平时de间距
+        symbolRadius: 1, //小圆点~小方块
+        // floating: true,
+        itemStyle: { // 图例颜色
+            color: 'rgb(255,255,255)',
+            fontSize: 12
+        },
+        itemHoverStyle: { //鼠标划过样式
+            color: "#ffff00"
+        },
+        // itemMarginLeft: 10
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false,
+                format: '{point.percentage:.0f} %',
+                style: {
+                    color: '#fff',
+                    fontSize: '12px',
+                    fontWeight: "400",
+                    textOutline: "none"
+                },
+                distance: 2, // 连接线的长度
+                connectorPadding: 2,
+                borderWidth: 0
+            },
+            showInLegend: true,
+            borderColor: "", //去边框
+            borderColor: "rgba(255,255,255,.2)", //去边框
+            borderWidth: 5
+        }
+    },
+
+    series: [{
+        type: "pie",
+        innerSize: "80%",
+        name: '停车场',
+        colorByPoint: true,
+        data: [{
+            name: '繁忙',
+            y: 500,
+        }, {
+            name: '正常',
+            y: 400
+        }, {
+            name: '未知',
+            y: 100
+        }]
+    }],
+    credits: {
+        enabled: false
+    },
+});
+
+Highcharts.chart('chart1', {
+    title: {
+        floating: true,
+        text: '',
+        verticalAlign: "middle",
+        y: 40,
+        style: {
+            color: "#02DF82",
+            fontSize: "25px",
+            lineHeight: "25px"
+        }
+    },
+    chart: {
+        type: 'pie',
+        backgroundColor: 'transparent' // 图形背景颜色
+    },
+    colors: ['#02DF82', '#FF2D2D', '#ff7575', '#FF00FF', '#FF0080', '#4DFFFF', '#2828FF', '#FFD306',
+        '#FFFF93', '#97CBFF'
+    ],
+    tooltip: {
+        headerFormat: '', //标题格式
+        pointFormat: '{point.name}:{point.y}'
+    },
+    legend: {
+        enabled: true, //图例开关
+        align: 'center', //对齐方式：left，center，right
+        layout: 'horizontal', //布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
+        verticalAlign: 'bottom', //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
+        itemStyle: { // 图例颜色
+            color: 'rgba(255,255,255)'
+        },
+        itemHoverStyle: { //鼠标划过样式
+            color: "#ffff00"
+        },
+        itemMarginLeft: 10
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}:{point.y}',
+                style: {
+                    color: '#0CE2F6',
+                    fontSize: '12px',
+                    fontWeight: "400",
+                    textOutline: "none"
+                },
+                distance: 2, // 连接线的长度
+                connectorPadding: 2,
+                borderWidth: 0
+            },
+            showInLegend: true
+        }
+    },
+
+    series: [{
+        innerSize: "30%",
+        type: "pie",
+        data: [{
+            name: '暴露垃圾',
+            y: 978,
+        }, {
+            name: '绿地脏乱',
+            y: 854
+        }, {
+            name: '绿化弃料',
+            y: 852
+        }, {
+            name: '非法小广告',
+            y: 752
+        }, {
+            name: '乱堆物堆料',
+            y: 732
+        }]
+    }],
+    credits: {
+        enabled: false
+    },
+});
+
+
+
+Highcharts.chart('chart2', {
+    title: {
+        text: ``,
+    },
+    chart: {
+        type: 'column',
+        marginTop: 50,
+        backgroundColor: 'transparent' // 图形背景颜色
+    },
+    colors: ['#7cb5ec'],
+    tooltip: {
+        headerFormat: '{point.key}<br>', //标题格式
+        pointFormat: '{series.name}:{point.y}'
+    },
+    legend: {
+        enabled: false, //图例开关
+        align: 'right', //对齐方式：left，center，right
+        layout: 'horizontal', //布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
+        verticalAlign: 'top', //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
+        itemStyle: { // 图例颜色
+            color: 'rgba(255,255,255)'
+        },
+        itemHoverStyle: { //鼠标划过样式
+            color: "#ffff00"
+        },
+        itemMarginLeft: 10
+    },
+    yAxis: {
+        title: {
+            text: '数量(单位: 件)',
+            align: 'high', //可用的值有 "low"，"middle" 和 "high"，分别表示于最小值对齐、居中对齐、与最大值对齐。 默认是：middle
+            rotation: 0,
+            offset: -40,
+            y: -20,
+            style: {
+                color: "#fff", //x轴字体颜色
+                fontSize: "12px"
+            }
+        },
+        labels: {
+            style: {
+                color: '#fff',
+                fontSize: '12px',
+            },
+        },
+        lineColor: 'rgba(255,255,255,.5)', //坐标轴的颜色
+        tickColor: 'rgba(255,255,255,.5)', //坐标轴上的刻度线的颜色
+        tickInterval: 50, //刻度间隔
+        gridLineWidth: 1,
+        gridLineColor: "rgba(255,255,255,.5)", //设置网格线的颜色
+    },
+    xAxis: {
+        categories: ['高新区', '昆山市', '吴江区', '工业园区', '相城区', '姑苏区', '太仓市', '张家港市', '新吴区', '常熟市', ],
+        title: {
+            text: '',
+            align: "high", // 对齐方式
+            offset: 0,
+        },
+        labels: {
+            //   useHTML: true,
+            style: {
+                color: '#fff',
+                fontSize: '12px',
+            },
+
+            formatter: function () {
+                return `<a title="展现暗示形式" href="javascript: roadClick('${this.value}')">${this.value}</a>`;
+            }
+
+        },
+        lineColor: 'rgba(255,255,255,.5)', //坐标轴的颜色
+        tickColor: 'rgba(255,255,255,.5)', //坐标轴上的刻度线的颜色
+        gridLineWidth: 0,
+    },
+    plotOptions: {
+        series: {
+            cursor: 'pointer',
+            events: {
+                click: function (e) {
+
+                    let index = e.point.index;
+                    console.log("您点击了第" + (index + 1) + "个柱子");
+                    console.log('您点击的柱子是：' + e.point.category);
+                    console.log('您点击您的数据列名字是：' + this.name);
+                    console.log('您点击的数据列值是：' + e.point.options.y);
+                    console.log('您点击的柱子的颜色是：' + e.point.color);
+
+                    // 点击柱子变色： #7cb5ec 蓝色； #ffff00 黄色
+
+                    if (e.point.series.data[index].color == '#ffff00') {
+                        e.point.series.data[index].color = '#7cb5ec'; //如果是黄色则还原蓝色
+                    } else {
+                        for (var i = 0; i < e.point.series.data.length; i++) {
+                            if (i == index) {
+                                e.point.series.data[i].color = '#ffff00'; //把点击的柱子设为黄色其余变为蓝色
+                            } else {
+                                e.point.series.data[i].color = '#7cb5ec';
+                            }
+                            e.point.series.data[i].update(e.point.series.data[i]);
+                        }
+                    }
+                }
+            },
+            // point: {
+            //     events: {
+            //         click: function (e) {
+            //             console.log(e)
+            //             let index = this.index;
+            //             console.log("第二种：您点击了第" + (index + 1) + "个柱子");
+            //             console.log('第二种：您点击的柱子是：' + this.category);
+            //             console.log('第二种：您点击的数据列值是：' + this.y);
+            //             console.log('第二种：您点击的柱子的颜色是：' + this.color);
+            //             console.log('第二种：您点击的柱子的颜色是：' + this.colorIndex);
+            //         }
+            //     }
+            // },
+
+        },
+
+    },
+
+    series: [ //数据数组
+        {
+            name: '案件数',
+            data: [142, 125, 78, 99, 69, 157, 125, 188, 172, 140],
+        },
+
+    ],
+    credits: {
+        enabled: false
+    },
+});
+</script>
+
+</body>
+
+</html>

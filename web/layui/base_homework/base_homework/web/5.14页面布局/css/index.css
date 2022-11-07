@@ -1,0 +1,515 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
+}
+.a {
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+  background: #3EE3FF;
+  display: inline-block;
+  border-radius: 50px;
+}
+::-webkit-scrollbar {
+  display: none;
+  /* Chrome Safari */
+}
+span {
+  color: #3EE3FF;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: 0.9vw;
+}
+.box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  background-size: 100% 100%;
+  justify-content: center;
+  flex-flow: wrap row;
+}
+.box .title {
+  width: 100%;
+  height: 96px;
+  background-image: url("../img/background_head.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: space-between;
+  font-size: 0.9vw;
+  color: #FFFFFF;
+  position: relative;
+}
+.box .title .left {
+  width: 30%;
+  height: 20px;
+  margin-top: 42px;
+  margin-left: 26px;
+  line-height: 20px;
+}
+.box .title .left p {
+  display: inline;
+  margin-right: 20px;
+}
+.box .title .title-text {
+  width: 40%;
+  text-align: center;
+}
+.box .title .title-text p {
+  width: 580px;
+  height: 36px;
+  font-size: 1.8vw;
+  font-family: PangMenZhengDao;
+  color: #FFFFFF;
+  position: absolute;
+  top: 19px;
+  left: calc((100% - 580px) / 2);
+}
+.box .title .right {
+  width: 30%;
+  font-size: 0.9vw;
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: flex-end;
+  margin-top: 46px;
+  margin-right: 1vw;
+  padding-right: 30px;
+}
+.box .title .right p {
+  height: 20px;
+  line-height: 20px;
+}
+.box .navigate {
+  width: 50%;
+  height: 80px;
+  position: absolute;
+  line-height: 80px;
+  top: 69px;
+  background-image: url(../img/bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 999;
+}
+.box .navigate ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 100%;
+  color: white;
+  opacity: 0.6;
+  font-size: 0.9vw;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+}
+.box .navigate ul li {
+  list-style: none;
+}
+.box .navigate ul li:hover {
+  color: #22CEEE;
+}
+.box .cantent {
+  width: 100%;
+  height: calc(100% - 96px);
+  display: flex;
+  flex: 1;
+  flex-flow: wrap row;
+  justify-content: space-around;
+  margin: 10px;
+}
+.box .cantent .cantent-box {
+  width: calc(50% - 10px);
+  height: calc(50% - 20px);
+  background: linear-gradient(180deg, rgba(6, 49, 143, 0.8) 0%, #051949 100%);
+  border: 1px solid #2E9FDB;
+  border-top: none;
+  position: relative;
+}
+.box .cantent .cantent-box .cb-title {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  left: -2px;
+  background-image: url(../img/head.png);
+  box-sizing: 100% 100%;
+  background-repeat: no-repeat;
+  background-repeat: repeat-x;
+  background-position: left;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.box .cantent .cantent-box .cb-title .cb-icon {
+  margin-top: 12px;
+  margin-left: 18px;
+  border-radius: 50px;
+}
+.box .cantent .cantent-box .cb-title p {
+  width: 200px;
+  height: 25px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  margin-left: 10px;
+  color: #22CEEE;
+  line-height: 25px;
+}
+.box .cantent .cantent-box .cantent-body {
+  width: 100%;
+  height: calc(100% - 50px);
+  padding: 15px;
+  position: relative;
+}
+.box .cantent .cantent-box .cantent-body .p {
+  position: absolute;
+  left: 20%;
+  top: 23%;
+  color: #22CEEE;
+  font-size: -1vw;
+}
+.box .cantent .cantent-box .cantent-body .cb-time {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin-top: 6%;
+}
+.box .cantent .cantent-box .cantent-body .cb-time .time {
+  width: 7%;
+  height: 6%;
+  line-height: 32px;
+  background: linear-gradient(180deg, rgba(6, 49, 143, 0.8) 0%, #051949 100%);
+  border-radius: 4px 0px 0px 4px;
+  border: 1px solid #2E9FDB;
+  display: flex;
+  color: #ffffff;
+  justify-content: space-around;
+}
+.box .cantent .cantent-box .cantent-body .cb-time :hover {
+  background: #3fcde6;
+}
+.box .cantent .cantent-box .cantent-body .cb-left {
+  width: calc(50% - 1px);
+}
+.box .cantent .cantent-box .cantent-body .fengexian {
+  width: 1px;
+  position: absolute;
+  left: 50%;
+  top: 19%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(6, 49, 143) 100%, #051949 100%);
+}
+.box .cantent .cantent-box .cantent-body .cb-right {
+  width: calc(50% - 20px);
+  height: calc(100% - 30px);
+  overflow: scroll;
+  position: relative;
+  left: 375px;
+  top: 10px;
+  background: linear-gradient(180deg, rgba(6, 49, 143, 0.8) 0%, #051949 100%);
+  border: 1px solid #2E9FDB;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cbr-title {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px 0px 0px 15px;
+  border-bottom: 1px solid #2E9FDB;
+  height: 30px;
+  line-height: 30px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cbr-title > div {
+  flex: 1;
+  height: 30px;
+  font-size: 1rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #22CEEE;
+  line-height: 30px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cbr-title ul {
+  flex: 1;
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  color: white;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cbr-title ul li {
+  height: 30px;
+  background: #0A4AAE;
+  border: 1px solid #2E9FDB;
+  padding: 0 10px;
+  line-height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(6, 49, 143, 0.8) 0%, #051949 100%);
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cbr-title ul li.active {
+  background: #0A4AAE;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju {
+  width: calc(100% - 40px);
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme1 {
+  display: flex;
+  flex: 1;
+  flex-flow: nowrap row;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme1 > div {
+  background: rgba(47, 154, 221, 0.2);
+  width: 195px;
+  height: 35px;
+  display: flex;
+  flex: 1;
+  flex-flow: nowrap row;
+  justify-content: space-around;
+  margin-left: 10px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme1 > div span {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 35px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme3 {
+  display: flex;
+  flex: 1;
+  flex-flow: nowrap row;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme3 .itme3-left {
+  background: rgba(47, 154, 221, 0.2);
+  width: 400px;
+  height: 35px;
+  display: flex;
+  flex: 1;
+  flex-flow: nowrap row;
+  justify-content: space-between;
+  margin-left: 10px;
+  line-height: 35px;
+  padding: 0 20px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme5 {
+  display: flex;
+  flex: 1;
+  flex-flow: nowrap row;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme5 > div {
+  width: 127px;
+  margin-left: 10px;
+  height: 85px;
+  flex-flow: row wrap;
+  background: rgba(47, 154, 221, 0.2);
+  position: relative;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme5 > div .s1 {
+  position: absolute;
+  width: 36px;
+  height: 22px;
+  display: block;
+  top: 10px;
+  left: 17px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme5 > div img {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 10px;
+  top: 26px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .shuju .itme5 > div .s2 {
+  position: absolute;
+  top: 33px;
+  left: 70px;
+}
+.box .cantent .cantent-box .cantent-body {
+  position: relative;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left {
+  width: calc(50% - 10px);
+  height: calc(100% - 30px);
+  border: 1px solid #2E9FDB;
+  position: relative;
+  top: 10px;
+  overflow: scroll;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ul {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: flex-start;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ul li {
+  list-style: none;
+  width: 91px;
+  height: 92px;
+  background: rgba(0, 113, 243, 0.2);
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ul li > div {
+  width: 80px;
+  height: 74px;
+  margin: auto;
+  border: burlywood 1px dashed;
+  margin-top: 9px;
+  background: url(../img/yangqu.png);
+}
+.box .cantent .cantent-box .cantent-body {
+  position: relative;
+}
+.box .cantent .cantent-box .cantent-body .xiala {
+  width: 160px;
+  height: 32px;
+  position: absolute;
+  left: 15px;
+  top: 0px;
+  border: 1px solid #2E9FDB;
+  background: linear-gradient(180deg, rgba(6, 49, 143, 0.8) 0%, #051949 100%);
+  color: #FFFFFF;
+  line-height: 32px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ol {
+  display: block;
+  width: 400px;
+  list-style: none;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  float: left;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ol li {
+  margin-top: 10px;
+  list-style: none;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ol .line1 {
+  display: flex;
+  width: 400px;
+  height: 35px;
+  line-height: 35px;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: rgba(47, 154, 221, 0.2);
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ol .line2 {
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ol .line2 > div {
+  width: 92.5px;
+  height: 125px;
+  display: flex;
+  background: rgba(47, 154, 221, 0.2);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ol .line2 > div img {
+  width: 62px;
+  height: 62px;
+  border: antiquewhite 1px dashed;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ol .line3 {
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ol .line3 > div {
+  background: rgba(47, 154, 221, 0.2);
+  width: 194px;
+  height: 74px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.box .cantent .cantent-box .cantent-body .cb2-left ol .line3 > div img {
+  width: 54px;
+  height: 54px;
+  border: antiquewhite 1px dashed;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cb3-shujv ol {
+  display: block;
+  width: 400px;
+  list-style: none;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  float: left;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cb3-shujv ol li {
+  margin-top: 10px;
+  list-style: none;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cb3-shujv ol .r-line1 {
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cb3-shujv ol .r-line1 > div {
+  width: 92.5px;
+  height: 128px;
+  background: rgba(47, 154, 221, 0.2);
+  display: flex;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cb3-shujv ol .r-line1 > div > div {
+  width: 68px;
+  height: 68px;
+  background: url(../img/iconblue.png);
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cb3-shujv ol .r-line1 > div > div > span {
+  font-size: 20px;
+  font-family: PangMenZhengDao;
+  color: #FFFFFF;
+  font-weight: 800;
+  line-height: 17px;
+  position: absolute;
+  top: 27px;
+  left: 14px;
+}
+.box .cantent .cantent-box .cantent-body .cb-right .cb3-shujv ol .r-line2 {
+  width: 100%;
+  height: 47px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background: rgba(47, 154, 221, 0.2);
+  line-height: 10px;
+  padding: 20px;
+}

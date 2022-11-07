@@ -1,0 +1,99 @@
+.main-index {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #F4F8F9;
+  overflow: hidden;
+}
+.main-index .main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #1890ff;
+  text-align: center;
+}
+.main-index .main-header .logo {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  height: 70px;
+  line-height: 70px;
+  cursor: pointer;
+}
+.main-index .main-header .logo img {
+  height: 80%;
+}
+.main-index .main-header .big-title {
+  margin: 0 auto;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  height: 70px;
+  line-height: 70px;
+  letter-spacing: 2px;
+  display: inline-block;
+}
+.main-index .main-header .time-box {
+  position: absolute;
+  right: 140px;
+  top: 0;
+  height: 70px;
+  line-height: 70px;
+  color: #fff;
+  font-size: 16px;
+}
+.main-index .main-header .user-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 70px;
+}
+.main-index .main-header .user-box:before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  width: 1px;
+  left: 0;
+  background-color: #fff;
+}
+.main-index .main-header .user-box .layui-nav {
+  padding: 0;
+  background: transparent;
+
+}
+.main-index .main-header .user-box .layui-nav .layui-nav-item {
+  line-height: 70px;
+}
+.main-index .main-header .user-box .layui-nav .layui-nav-bar {
+  display: none;
+}
+.main-index .main-menu {
+  z-index: 2;
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.main-index .main-menu .iconfont {
+  font-size: 16px;
+  margin-right: 5px;
+}
+.main-index .main-body {
+  z-index: 1;
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  right: 0;
+  left: 200px;
+}
+.main-index .main-body iframe {
+  width: 100%;
+  height: 100%;
+}

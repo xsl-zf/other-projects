@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./js/layui-v2.6.6/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="css/xiaox-btn.css"/>
+    <script src="js/layui-v2.6.6/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/dist/xm-select.js" type="text/javascript" charset="utf-8"></script>
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .xm-select-demo {
+            width: 50%;
+            display: inline-block;
+
+        }
+
+        button {
+            width: 10%;
+            min-width: 100px;
+
+        }
+
+        p {
+            text-align: left;
+            margin: 10px;
+        }
+    </style>
+<body>
+<p>普通参数</p>
+<div id="demo1" class="xm-select-demo"></div>
+<button class="btn btn-blue" id="demo1-getValue">获取多选值</button>
+<p>单选按钮</p>
+<div id="demo2" class="xm-select-demo"></div>
+<button class="btn btn-orange" id="demo2-getValue">获取单选值</button>
+<p>自定义数据格式与下拉监听</p>
+<div id="demo3" class="xm-select-demo"></div>
+<button class="btn btn-black" id="demo3-getValue">获取单选值</button>
+<p>构建选项,自定义渲染</p>
+<div id="demo4" class="xm-select-demo"></div>
+<button class="btn btn-green" id="demo4-getValue">获取单选值</button>
+<p>自定义渲染 - label</p>
+<div id="demo5" class="xm-select-demo"></div>
+<button class="btn btn-red" id="demo5-getValue">获取单选值</button>
+<p>分页的分组,创建条目</p>
+<div id="demo6" class="xm-select-demo"></div>
+<button class="btn btn-white" id="demo6-getValue">获取单选值</button>
+<script>
+    layui.use(['layer', 'jquery', 'form'], function () {
+        var layer = layui.layer;
+        var form = layui.form;
+        $ = layui.jquery;
+
+        var data = [];
+        for (var i = 0; i < 100; i++) {
+            data.push({
+                name: '测试数据' + i,
+                value: i,
+            });
+        }
+        //多选1
+        var demo1 = xmSelect.render({
+            el: '#demo1', //存放下拉框的div的id
+            language: 'zn', //使用的语言，
+            tips: "你需要第几条测试数据呢？", //提示语句
+            toolbar: {
+                show: true, //是否开启
+                // showIcon: false,//是否显示图标
+                list: ['ALL', 'CLEAR', 'REVERSE'] //显示全部工具条
+            }, //头工具栏
+            filterable: true, //是否开启搜索，默认按照name搜索
+            filterMethod: function (val, item, index, prop) {
+                if (val == item.value) { //把value相同的搜索出来
+                    return true;
+                }
+                if (item.name.indexOf(val) != -1) { //名称中包含的搜索出来
+                    return true;
+                }
+                return false; //不知道的就不管了
+            }, //重写搜索方法。
+            direction: 'auto', //下拉框方向，自动auto，向上up，向下down，
+            style: {
+                backgroundColor: "#dcfcff",
+                border: ' 1px solid #5cc1ff',
+                color: '#1890FF'
+            }, //设置样式
+            paging: true, //是否开启分页
+            pageSize: 30, //每页多少条数据
+            repeat: true, //是否开启重复选
+            prop: {
+                label: 'name',
+                id: 'value',
+            }, //自定义数据名称
+            theme: {
+                color: '#0081ff',
+            }, //主题颜色
+            data, //数据
+
+        })
+        $("#demo1-getValue").click(function () {
+            //获取当前多选选中的值
+            var selectArr = demo1.getValue();
+            console.log(selectArr)
+            alert(JSON.stringify(selectArr, null, 2))
+        })
+        //多选二
+        var demo3 = xmSelect.render({
+            el: '#demo3', //存放下拉框的div的id
+            language: 'zn', //使用的语言，
+            tips: "你需要第几条测试数据呢？", //提示语句
+            filterable: true, //是否开启搜索，默认按照name搜索
+            filterMethod: function (val, item, index, prop) {
+                if (val == item.value) { //把value相同的搜索出来
+                    return true;
+                }
+                if (item.name.indexOf(val) != -1) { //名称中包含的搜索出来
+                    return true;
+                }
+                return false; //不知道的就不管了
+            }, //重写搜索方法。
+            direction: 'auto', //下拉框方向，自动auto，向上up，向下down，
+            paging: true, //是否开启分页
+            pageSize: 30, //每页多少条数据
+            repeat: true, //是否开启重复选
+            prop: {
+                label: 'name',
+                id: 'value',
+            }, //自定义数据名称
+            theme: {
+                color: '#333333',
+            }, //主题颜色
+            data, //数据
+            //监听打开/关闭下拉框
+            show() {
+                console.log("打开了")
+            }, //
+            hide() {
+                console.log("关闭了")
+            },
+            on: function (data) {
+                //arr:  当前多选已选中的数据
+                var arr = data.arr;
+                console.log(arr);
+                //change, 此次选择变化的数据,数组
+                var change = data.change;
+                console.log(change)
+                //isAdd, 此次操作是新增还是删除
+                var isAdd = data.isAdd;
+                console.log(isAdd)
+
+
+                // alert('已有: '+arr.length+' 变化: '+change.length+', 状态: ' + isAdd)
+            }, //实时监听多选的选中状态变化
+            toolbar: {
+                show: true,
+                list: ['ALL', {
+                    name: '自定义',
+                    icon: 'layui-icon layui-icon-face-smile',
+                    method(data) {
+                        alert('我是自定义的');
+                    }
+                }]
+            },
+        })
+        $("#demo3-getValue").click(function () {
+            //获取当前多选选中的值
+            var selectArr = demo3.getValue();
+            console.log(selectArr)
+            alert(JSON.stringify(selectArr, null, 2))
+        })
+        //多选三
+        var demo4 = xmSelect.render({
+            el: '#demo4',
+            template({
+                         item,
+                         sels,
+                         name,
+                         value
+                     }) {
+                return item.name + '<span style="position: absolute; right: 10px; color: #8799a3">' + value + '</span>'
+            },
+            prop: {
+                name: 'showname',
+            },
+            data: [{
+                name: '张三',
+                value: 'zhangsan',
+                showname: '组织部-张三',
+                selected: true
+            },
+                {
+                    name: '李四',
+                    value: 'lisi',
+                    showname: '策划部-李四',
+                    selected: true
+                },
+                {
+                    name: '王五',
+                    value: 'wangwu',
+                    showname: '运营部-王五'
+                },
+            ]
+        })
+        // 多选四
+        var icons = ['layui-icon layui-icon-face-smile', 'layui-icon layui-icon-cellphone']
+
+        var demo5 = xmSelect.render({
+            el: '#demo5',
+            model: {
+                label: {
+                    block: {
+                        template: function (item, sels) {
+                            return '<i class="' + icons[item.group] + '"></i>' + item.name;
+                        },
+                    },
+                }
+            },
+            template({
+                         item,
+                         sels,
+                         name,
+                         value
+                     }) {
+                return item.name + '<span style="position: absolute; right: 10px; color: #8799a3">' + value + '</span>'
+            },
+            toolbar: {
+                show: true, //是否开启
+                showIcon: false, //是否显示图标
+                list: ['ALL', 'CLEAR', 'REVERSE'] //显示全部工具条
+            }, //头工具栏
+            data: [{
+                group: 1,
+                name: '张三',
+                value: 'zhangsan',
+                selected: true
+            },
+                {
+                    group: 0,
+                    name: '李四',
+                    value: 'lisi',
+                    selected: true
+                },
+                {
+                    group: 1,
+                    name: '王五',
+                    value: 'wangwu'
+                },
+            ]
+        })
+
+        //多选五
+        var demo6 = xmSelect.render({
+            el: '#demo6',
+            toolbar: {
+                show: true,
+            },
+            filterable: true,
+            height: '500px',
+            paging: true,
+            pageSize: 3,
+            data: [{
+                name: '销售员',
+                children: [{
+                    name: '张三1',
+                    value: 1
+                },
+                    {
+                        name: '李四1',
+                        value: 2
+                    },
+                    {
+                        name: '王五13',
+                        value: 3
+                    },
+                    {
+                        name: '李1',
+                        value: 4
+                    },
+                    {
+                        name: '王15',
+                        value: 5
+                    }, {
+                        name: '李as1',
+                        value: 6
+                    },
+                    {
+                        name: '123',
+                        value: 7
+                    },
+                ]
+            },
+                {
+                    name: '奖品',
+                    children: [{
+                        name: '苹果23',
+                        value: 11
+                    },
+                        {
+                            name: '香蕉2',
+                            value: 15
+                        },
+                        {
+                            name: '葡萄2',
+                            value: 17
+                        },
+                        {
+                            name: '香蕉2ew',
+                            value: 19
+                        },
+                        {
+                            name: '葡萄qw2',
+                            value: 8
+                        }, {
+                            name: '香蕉21',
+                            value: 9
+                        },
+
+                    ]
+                },
+            ],
+            direction: 'down',
+            create: function (val, arr) {
+                //返回一个创建成功的对象, val是搜索的数据, arr是搜索后的当前页面数据
+                return {
+                    name: '创建-' + val,
+                    value: val
+                }
+            }
+        })
+        // 单选
+        var demo2 = xmSelect.render({
+            el: '#demo2',
+            radio: true, //是否是单选
+            clickClose: true, //单选过后关闭下拉
+            toolbar: {
+                show: true
+            }, //工具栏
+            theme: {
+                color: '#FFA940',
+            }, //主题颜色
+            data: [{
+                name: '张三',
+                value: 1
+            },
+                {
+                    name: '李四',
+                    value: 2
+                },
+                {
+                    name: '王五',
+                    value: 3
+                },
+            ]
+        })
+        $("#demo2-getValue").click(function () {
+            //获取当前多选选中的值
+            var selectArr = demo2.getValue();
+            console.log(selectArr)
+            alert(JSON.stringify(selectArr, null, 2))
+        })
+
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ZH-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>所有图表</title>
+</head>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .box {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: #182F5D;
+        color: #fff;
+    }
+
+    .box-item {
+        width: 700px;
+        height: 340px;
+        margin: 10px;
+    }
+
+    .title {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .content {
+        border: 1px #ccc solid;
+        width: 100%;
+        height: calc(100% - 40px);
+
+    }
+
+    .div13 {
+        width: 1000px;
+        height: 500px;
+    }
+</style>
+
+<body>
+<div class="box">
+    <div class="box-item">
+        <div class="title">div1 饼图</div>
+        <div class="content" id="div1"></div>
+    </div>
+    <div class="box-item">
+        <div class="title">div2 环图</div>
+        <div class="content" id="div2"></div>
+    </div>
+    <div class="box-item">
+        <div class="title">div3 定制饼图</div>
+        <div class="content" id="div3"></div>
+    </div>
+    <div class="box-item">
+        <div class="title">div4 折线图</div>
+        <div class="content" id="div4"></div>
+    </div>
+    <div class="box-item">
+        <div class="title">div5 面积图</div>
+        <div class="content" id="div5"></div>
+    </div>
+
+
+    <div class="box-item">
+        <div class="title">div6 多个面积图</div>
+        <div class="content" id="div6"></div>
+    </div>
+
+    <div class="box-item">
+        <div class="title">div7 柱状图</div>
+        <div class="content" id="div7"></div>
+    </div>
+    <div class="box-item">
+        <div class="title">div8 多个柱状图</div>
+        <div class="content" id="div8"></div>
+    </div>
+    <div class="box-item">
+        <div class="title">div9 混合图：柱状图+折线图</div>
+        <div class="content" id="div9"></div>
+    </div>
+    <div class="box-item">
+        <div class="title">div10 反坐标柱状图</div>
+        <div class="content" id="div10"></div>
+    </div>
+    <div class="box-item">
+        <div class="title">div11 堆叠图</div>
+        <div class="content" id="div11"></div>
+    </div>
+    <div class="box-item">
+        <div class="title">div12 仪表盘</div>
+        <div class="content" id="div12"></div>
+    </div>
+    <div class="box-item div13">
+        <div class="title">div13 3D柱状图</div>
+        <div class="content" id="div13"></div>
+    </div>
+
+</div>
+
+</body>
+<!-- 官方js文件 -->
+<script src="../plugins/echarts/echarts.js"></script>
+<script src="../plugins/echarts/echarts-lg.js"></script>
+<!-- 主题风格js文件 -->
+<script src="../plugins/echarts/macarons.js"></script>
+<script src="../plugins/echarts/shine.js"></script>
+<!-- 我的js文件 -->
+<script src="../plugins/echarts/charts.js"></script>
+<script>
+
+</script>
+
+</html>

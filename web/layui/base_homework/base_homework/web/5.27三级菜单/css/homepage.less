@@ -1,0 +1,127 @@
+// 主结构
+.main-index {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #F4F8F9;
+    overflow: hidden;
+
+
+    .main-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        background: #1890ff;
+        text-align: center;
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            height: 70px;
+            line-height: 70px;
+            cursor: pointer;
+
+            img {
+                height: 80%;
+            }
+        }
+
+        .big-title {
+            margin: 0 auto;
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            height: 70px;
+            line-height: 70px;
+            letter-spacing: 2px;
+            display: inline-block;
+        }
+
+        .time-box {
+            position: absolute;
+            right: 140px;
+            top: 0;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 16px;
+
+        }
+
+        .user-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 70px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 14px;
+                bottom: 14px;
+                width: 1px;
+                left: 0;
+                background-color: #fff;
+            }
+
+            .layui-nav {
+                padding: 0;
+                background: transparent;
+
+                .layui-nav-item {
+                    line-height: 70px;
+
+                }
+
+                .layui-nav-bar {
+                    display: none;
+                }
+
+
+
+            }
+
+
+        }
+
+
+    }
+
+    .main-menu {
+        z-index: 2;
+        position: absolute;
+        top: 70px;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+
+        // box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+
+
+        .iconfont {
+            font-size: 18px;
+        }
+
+
+    }
+
+    .main-body {
+        z-index: 1;
+        position: absolute;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        left: 200px;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

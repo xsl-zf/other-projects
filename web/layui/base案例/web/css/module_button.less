@@ -1,0 +1,227 @@
+// 按钮
+button:hover {
+  opacity: 0.8;
+}
+
+button {
+  outline: none;
+  border: 0;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+
+// 蓝色按钮
+.btn-blue {
+  height: 32px;
+  padding: 0 18px;
+  height: 32px;
+  background: rgba(24, 144, 255, 1);
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  color: #fff;
+}
+
+// 绿色按钮
+.btn-green {
+  height: 32px;
+  padding: 0 18px;
+  text-align: center;
+  border-radius: 2px;
+  background: #31B3AE;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  color: #fff;
+}
+
+// 白色按钮
+.btn-white {
+  height: 32px;
+  padding: 0 18px;
+  height: 32px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(221, 221, 221, 1);
+  border-radius: 2px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+// 橙色按钮
+.btn-orange {
+  height: 32px;
+  padding: 0 18px;
+  text-align: center;
+  border-radius: 2px;
+  background: #FFA940;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  color: #fff;
+}
+
+// 红色按钮
+.btn-red {
+  height: 32px;
+  padding: 0 18px;
+  text-align: center;
+  border-radius: 2px;
+  background: #FF5722;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  color: #fff;
+}
+
+// 蓝字按钮
+.btn-blue-font {
+  padding: 0 10px;
+  height: 32px;
+  background: rgba(230, 247, 255, 1);
+  border-radius: 2px;
+  border: 1px solid rgba(92, 193, 255, 1);
+  cursor: pointer;
+  color: #1890FF;
+}
+
+// 绿字按钮
+.btn-green-font {
+  height: 32px;
+  padding: 0 10px;
+  text-align: center;
+  background: #F6FFED;
+  border-radius: 2px;
+  border: 1px solid #8CDE4D;
+  cursor: pointer;
+  color: #52C41A;
+}
+
+// 橙字按钮
+.btn-orange-font {
+  height: 32px;
+  padding: 0 10px;
+  text-align: center;
+  border-radius: 2px;
+  background: rgba(255, 251, 230, 1);
+  border-radius: 2px;
+  border: 1px solid rgba(243, 178, 95, 1);
+  cursor: pointer;
+  color: #FA9514;
+}
+
+// 红字按钮
+.btn-red-font {
+  height: 32px;
+  padding: 0 10px;
+  text-align: center;
+  background: rgba(255, 241, 240, 1);
+  border-radius: 2px;
+  border: 1px solid rgba(255, 119, 112, 1);
+  cursor: pointer;
+  color: #EF232E;
+}
+
+// 禁用按钮
+.btn-disabled {
+  height: 32px;
+  padding: 0 10px;
+  text-align: center;
+  background: #FBFBFB;
+  border-radius: 2px;
+  border: 1px solid #e6e6e6;
+  cursor: not-allowed;
+  color: #C9C9C9;
+}
+
+.btn-disabled:hover {
+  opacity: 1;
+}
+
+// 日月年
+.btn-date-white {
+  height: 32px;
+  display: flex;
+  overflow: hidden;
+
+  li {
+    z-index: 1;
+    padding: 0 18px;
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.65);
+    border: 1px solid #ddd;
+    cursor: pointer;
+
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &:not(:last-child) {
+      margin-right: -1px;
+      border-right: 1px solid rgba(255, 255, 255, 0);
+    }
+
+  }
+
+
+  li.active {
+    z-index: 2;
+    color: #1890FF;
+    background: #E6F7FF;
+    border: 1px solid #5CC1FF;
+  }
+
+
+}
+
+// 日月年
+.btn-date-blue {
+  height: 32px;
+  display: flex;
+  overflow: hidden;
+
+  li {
+    z-index: 1;
+    padding: 0 18px;
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    border: 1px solid #2E9FDB;
+    background: linear-gradient(180deg, rgba(6, 49, 143, 0.8) 0%, #051949 100%);
+    cursor: pointer;
+
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &:not(:last-child) {
+      margin-right: -1px;
+      border-right: 1px solid rgba(255, 255, 255, 0);
+    }
+
+  }
+
+
+  li.active {
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.85);
+    background: #0A4AAE;
+    border: 1px solid #2E9FDB;
+  }
+
+
+}

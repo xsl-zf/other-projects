@@ -1,0 +1,51 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.all {
+    width: 100%;
+    height: 100%;
+
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background: #3875C7;
+        padding-left: 20px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        .myicon {
+            flex: 1;
+
+            >img {
+                width: 139px;
+            }
+        }
+
+        .uesr-box {
+            flex: 1;
+            height: 50px;
+
+            ul {
+                list-style: none;
+
+                >li {
+                    height: 50px;
+
+                    >img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

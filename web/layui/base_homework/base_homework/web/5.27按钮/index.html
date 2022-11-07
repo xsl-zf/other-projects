@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script src="../../plugins/jquery/jquery.min.js"></script>
+	<script src="../../modules/layui-v2.6.6/layui/layui.js"></script>
+	<style type="text/css">
+		body{
+			background-color: #000000;
+		}
+		.btns {
+			width: 900px;
+			height: 300px;
+			margin: 0 auto;
+			background-color: #000000;
+		}
+
+		.publicBtn {
+			background-color: #00D9FF;
+		}
+
+		button {
+			width: 200px;
+			color: white;
+			padding: 10px;
+			background-color: #000000;
+			border: #00D9FF 2px solid;
+			margin: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="btns">
+		<div class="first">
+			<button type="button">主干道</button>
+			<button type="button">次干道</button>
+			<button type="button">背街小巷</button>
+			<button type="button">无名背街小巷</button>
+		</div>
+		<div class="two">
+			<button type="button">市区</button>
+			<button type="button">区划</button>
+			<button type="button">街道</button>
+			<button type="button">社区</button>
+		</div>
+	</div>
+
+	<script>
+		layui.use(['layer', 'form'], function () {
+			var form = layui.form;
+			var layer = layui.layer;
+
+			$(".first>button").each(function () {//遍历第一组button
+				$(this).addClass("publicBtn");//默认加上被选中样式
+				$(this).click(function () {
+					$(this).toggleClass("publicBtn");//进行样式切换
+					var pub = $(this).hasClass("publicBtn");//判断是否被选中
+					if (pub) {
+						var value = $("button").text();//取值
+						layer.msg(value);
+
+					}
+				})
+			})
+
+			$(".two>button").each(function () {//遍历第二组样式
+
+				var str = $(this).hasClass("publicBtn");//判断按钮是否被选中
+				// console.log(str);
+				if (!str) {
+					if ($(this).text() == "市区") {//设置市区默认选中
+						$(this).addClass("publicBtn");
+					} else {
+
+						$(this).removeClass("publicBtn");
+
+					}
+
+				}
+				$(this).click(function () {
+					$(".two>button").removeClass("publicBtn");//清除所有选中样式
+					$(this).toggleClass("publicBtn");//给选中按钮添加样式
+					var pub = $(this).hasClass("publicBtn");//判断是否被选中
+					if (pub) {
+
+						// $("button").each(function () {
+						// 	var btn = $("button").hasClass("publicBtn");
+						// 	if (btn) {
+
+						// 	}
+						// })
+
+						var value = $("button").text();//赋值
+						layer.msg(value);
+
+					}
+
+				})
+			})
+		})
+	</script>
+</body>
+
+</html>

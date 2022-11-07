@@ -1,0 +1,496 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layui表单-下拉框联动</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" href="../plugins/layui-v2.6.6/layui/css/layui.css">
+</head>
+
+<body>
+<div class="main-demo">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>简介</legend>
+    </fieldset>
+
+    <blockquote class="layui-elem-quote">
+        layui表单-下拉框联动
+
+    </blockquote>
+
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>使用</legend>
+    </fieldset>
+
+    <blockquote class="layui-elem-quote">
+        <p>1.表单元素有联动选项时使用，如：【大类小类二级联动】 和 【区划街道社区三级联动】。</p>
+        <p>2.注意：表单的重置动作会有所不同。</p>
+    </blockquote>
+
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>案例演示</legend>
+    </fieldset>
+
+    <!-- 只渲染 -->
+    <div class="layui-card">
+        <div class="layui-card-header">只渲染</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="" lay-filter="example">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">区划</label>
+                    <div class="layui-input-inline">
+                        <select name="area" id="area" lay-filter="area">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">街道</label>
+                    <div class="layui-input-inline">
+                        <select name="street" id="street" lay-filter="street">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">社区</label>
+                    <div class="layui-input-inline">
+                        <select name="community" id="community" lay-filter="community">
+
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn-blue" id="btn_getData">取值</button>
+                <button type="reset" class="btn-green" id="btn_reset">重置</button>
+            </form>
+        </div>
+    </div>
+    <!-- 渲染+赋值 -->
+    <div class="layui-card">
+        <div class="layui-card-header">渲染+赋值</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="" lay-filter="example2">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">区划</label>
+                    <div class="layui-input-inline">
+                        <select name="area2" id="area2" lay-filter="area2">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">街道</label>
+                    <div class="layui-input-inline">
+                        <select name="street2" id="street2" lay-filter="street2">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">社区</label>
+                    <div class="layui-input-inline">
+                        <select name="community2" id="community2" lay-filter="community2">
+
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn-blue" id="btn_getData2">取值</button>
+                <button type="reset" class="btn-green" id="btn_reset2">重置</button>
+            </form>
+        </div>
+    </div>
+    <!-- 渲染+赋值+全禁用 -->
+    <div class="layui-card">
+        <div class="layui-card-header">渲染+赋值+全禁用</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="" lay-filter="example3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">区划</label>
+                    <div class="layui-input-inline">
+                        <select name="area3" id="area3" lay-filter="area3">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">街道</label>
+                    <div class="layui-input-inline">
+                        <select name="street3" id="street3" lay-filter="street3">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">社区</label>
+                    <div class="layui-input-inline">
+                        <select name="community3" id="community3" lay-filter="community3">
+
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn-blue" id="btn_getData3">取值</button>
+                <button type="reset" class="btn-green" id="btn_reset3">重置</button>
+            </form>
+        </div>
+    </div>
+    <!-- 渲染+赋值+默认选中并禁用第1项 -->
+    <div class="layui-card">
+        <div class="layui-card-header">渲染+赋值+默认选中并禁用第1项</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="" lay-filter="example4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">区划</label>
+                    <div class="layui-input-inline">
+                        <select name="area4" id="area4" lay-filter="area4">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">街道</label>
+                    <div class="layui-input-inline">
+                        <select name="street4" id="street4" lay-filter="street4">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">社区</label>
+                    <div class="layui-input-inline">
+                        <select name="community4" id="community4" lay-filter="community4">
+
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn-blue" id="btn_getData4">取值</button>
+                <button type="reset" class="btn-green" id="btn_reset4">重置</button>
+            </form>
+        </div>
+    </div>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>关键代码</legend>
+    </fieldset>
+
+
+</div>
+
+<script src="../plugins/layui-v2.6.6/layui/layui.js"></script>
+<script src="../public/js/public.js"></script>
+
+<script>
+    // 声明变量-所有选项
+    var data_sel = [];
+
+    // 声明变量-用户信息
+    var u_areaID, u_streetID, u_communityID;
+
+    // 模拟请求接口
+    getData_sel();
+
+    function getData_sel() {
+        $.ajax({
+            url: "./json/data_select.json", //json文件位置
+            type: "GET", //请求方式为get
+            dataType: "json", //返回数据格式为json
+            success: function (res) { //请求成功完成后要执行的方法
+                data_sel = res.obj;
+                // console.log(getData_byID(0));
+                render_sel("#area", getData_byID("0"));
+
+                getData_info();
+            }
+        })
+    }
+
+    // 根据id取数据
+    function getData_byID(id) {
+        let arr = [];
+        for (let i = 0; i < data_sel.length; i++) {
+            if (data_sel[i].pId == id) {
+                arr.push(data_sel[i]);
+            }
+        }
+        return arr;
+    }
+
+    // 渲染下拉框
+    function render_sel(element, data, fn) {
+        let opts = "";
+        if (element.indexOf("area") != -1) {
+            opts = `<option value="">全市</option>`;
+        }
+        if (element.indexOf("street") != -1) {
+            opts = `<option value="">所有街道</option>`;
+        }
+        if (element.indexOf("community") != -1) {
+            opts = `<option value="">所有社区</option>`;
+        }
+        for (let i = 0; i < data.length; i++) {
+            let opt = `<option value="${data[i].id}">${data[i].name}</option>`
+            opts += opt;
+        }
+        $(element).html(opts);
+        layui.form.render();
+        if (fn) {
+            // 回调方法，这里放在最后边
+            fn();
+        }
+    }
+
+    // 监听select选择1
+    form.on('select(area)', function (data) {
+        let str = data.elem[data.elem.selectedIndex].text; //得到被选中的文本
+        let id = data.value; //得到被选中的值
+        if (id == "") {
+            // 清空
+            $("#street").html("");
+            $("#community").html("");
+            layui.form.render();
+        } else {
+            $("#community").html("");
+            render_sel("#street", getData_byID(id));
+        }
+
+    });
+    form.on('select(street)', function (data) {
+        let str = data.elem[data.elem.selectedIndex].text; //得到被选中的文本
+        let id = data.value; //得到被选中的值
+        if (id == "") {
+            // 清空
+            $("#community").html("");
+            layui.form.render();
+        } else {
+            render_sel("#community", getData_byID(id));
+        }
+    });
+
+    // 监听select选择2
+    form.on('select(area2)', function (data) {
+        let str = data.elem[data.elem.selectedIndex].text; //得到被选中的文本
+        let id = data.value; //得到被选中的值
+        if (id == "") {
+            // 清空
+            $("#street2").html("");
+            $("#community2").html("");
+            layui.form.render();
+        } else {
+            $("#community2").html("");
+            render_sel("#street2", getData_byID(id));
+        }
+
+    });
+    form.on('select(street2)', function (data) {
+        let str = data.elem[data.elem.selectedIndex].text; //得到被选中的文本
+        let id = data.value; //得到被选中的值
+        if (id == "") {
+            // 清空
+            $("#community2").html("");
+            layui.form.render();
+        } else {
+            render_sel("#community2", getData_byID(id));
+        }
+    });
+
+    // 监听select选择3
+    form.on('select(area3)', function (data) {
+        let str = data.elem[data.elem.selectedIndex].text; //得到被选中的文本
+        let id = data.value; //得到被选中的值
+        if (id == "") {
+            // 清空
+            $("#street3").html("");
+            $("#community3").html("");
+            layui.form.render();
+        } else {
+            $("#community3").html("");
+            render_sel("#street3", getData_byID(id));
+        }
+
+    });
+    form.on('select(street3)', function (data) {
+        let str = data.elem[data.elem.selectedIndex].text; //得到被选中的文本
+        let id = data.value; //得到被选中的值
+        if (id == "") {
+            // 清空
+            $("#community3").html("");
+            layui.form.render();
+        } else {
+            render_sel("#community3", getData_byID(id));
+        }
+    });
+
+    // 监听select选择4
+    form.on('select(area4)', function (data) {
+        let str = data.elem[data.elem.selectedIndex].text; //得到被选中的文本
+        let id = data.value; //得到被选中的值
+        if (id == "") {
+            // 清空
+            $("#street4").html("");
+            $("#community4").html("");
+            layui.form.render();
+        } else {
+            $("#community4").html("");
+            render_sel("#street4", getData_byID(id));
+        }
+
+    });
+    form.on('select(street4)', function (data) {
+        let str = data.elem[data.elem.selectedIndex].text; //得到被选中的文本
+        let id = data.value; //得到被选中的值
+        if (id == "") {
+            // 清空
+            $("#community4").html("");
+            layui.form.render();
+        } else {
+            render_sel("#community4", getData_byID(id));
+        }
+    });
+
+    // 模拟请求详情接口
+    function getData_info() {
+        $.ajax({
+            url: "./json/data_info.json", //json文件位置
+            type: "GET", //请求方式为get
+            dataType: "json", //返回数据格式为json
+            success: function (res) { //请求成功完成后要执行的方法
+                //模拟表单赋值：区划：3  街道：302；社区：1012
+                u_areaID = res.obj.u_areaID;
+                u_streetID = res.obj.u_streetID;
+                u_communityID = res.obj.u_communityID;
+                // 俄罗斯套娃2
+                render_sel("#area2", getData_byID("0"), function () {
+                    $("#area2").val(u_areaID);
+                    render_sel("#street2", getData_byID(u_areaID), function () {
+                        $("#street2").val(u_streetID);
+                        render_sel("#community2", getData_byID(u_streetID),
+                            function () {
+                                $("#community2").val(u_communityID);
+                                layui.form.render();
+                            });
+                    });
+                });
+
+                // 俄罗斯套娃3
+                render_sel("#area3", getData_byID("0"), function () {
+                    $("#area3").val(u_areaID);
+                    $("#area3").attr("disabled", true);
+                    render_sel("#street3", getData_byID(u_areaID), function () {
+                        $("#street3").val(u_streetID);
+                        $("#street3").attr("disabled", true);
+                        render_sel("#community3", getData_byID(u_streetID),
+                            function () {
+                                $("#community3").val(u_communityID);
+                                $("#community3").attr("disabled", true);
+                                layui.form.render();
+                            });
+                    });
+                });
+
+                // 俄罗斯套娃4
+                render_sel("#area4", getData_byID("0"), function () {
+                    $("#area4").val(u_areaID);
+                    $("#area4").attr("disabled", true);
+                    let select_1 = 'dd[lay-value=' + u_areaID + ']';
+                    $('#area4').siblings("div.layui-form-select").find('dl').find(select_1)
+                        .click(); //触发点击事件
+                    layui.form.render();
+                });
+            }
+        })
+    }
+
+
+    //表单取值1
+    $('#btn_getData').on('click', function () {
+        var data = form.val('example');
+        layer.alert(JSON.stringify(data));
+    });
+    //表单取值2
+    $('#btn_getData2').on('click', function () {
+        var data = form.val('example2');
+        layer.alert(JSON.stringify(data));
+    });
+    //表单取值3
+    $('#btn_getData3').on('click', function () {
+        var data = form.val('example3');
+        layer.alert(JSON.stringify(data));
+    });
+    //表单取值4
+    $('#btn_getData4').on('click', function () {
+        var data = form.val('example4');
+        layer.alert(JSON.stringify(data));
+    });
+
+    //表单重置1
+    $('#btn_reset').on('click', function () {
+        let select_1 = 'dd[lay-value=""]';
+        $('#area').siblings("div.layui-form-select").find('dl').find(select_1)
+            .click(); //触发点击事件
+        layui.form.render();
+    });
+
+    //表单重置2
+    $('#btn_reset2').on('click', function () {
+
+
+        render_sel("#area2", getData_byID("0"), function () {
+            $("#area2").val(u_areaID);
+            render_sel("#street2", getData_byID(u_areaID), function () {
+                $("#street2").val(u_streetID);
+                render_sel("#community2", getData_byID(u_streetID),
+                    function () {
+                        $("#community2").val(u_communityID);
+                        layui.form.render();
+                    });
+            });
+        });
+        // layui.form.render();
+    }, 100)
+    })
+    ;
+    //表单重置3
+    $('#btn_reset3').on('click', function () {
+
+        setTimeout(function () {
+            // 俄罗斯套娃3
+            render_sel("#area3", getData_byID("0"), function () {
+                $("#area3").val(u_areaID);
+                $("#area3").attr("disabled", true);
+                render_sel("#street3", getData_byID(u_areaID), function () {
+                    $("#street3").val(u_streetID);
+                    $("#street3").attr("disabled", true);
+                    render_sel("#community3", getData_byID(u_streetID),
+                        function () {
+                            $("#community3").val(u_communityID);
+                            $("#community3").attr("disabled", true);
+                            layui.form.render();
+                        });
+                });
+            });
+            // layui.form.render();
+        }, 100)
+    });
+    //表单重置4
+    $('#btn_reset4').on('click', function () {
+
+        setTimeout(function () {
+            // 俄罗斯套娃4
+            render_sel("#area4", getData_byID("0"), function () {
+                $("#area4").val(u_areaID);
+                $("#area4").attr("disabled", true);
+                let select_1 = 'dd[lay-value=' + u_areaID + ']';
+                $('#area4').siblings("div.layui-form-select").find('dl').find(select_1)
+                    .click(); //触发点击事件
+                let select_2 = 'dd[lay-value=""]';
+                $('#street4').siblings("div.layui-form-select").find('dl').find(select_2)
+                    .click(); //触发点击事件
+                layui.form.render();
+            });
+        }, 100)
+    });
+</script>
+</body>
+
+</html>

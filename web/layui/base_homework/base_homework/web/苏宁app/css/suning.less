@@ -1,0 +1,301 @@
+//导入公共样式
+@import "common";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: 0;
+}
+
+body {
+    box-sizing: border-box;
+    min-width: 320px;
+    width: 15rem;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F7F7F7;
+
+}
+
+//search-content
+@baseFont: 50;
+
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: (88rem / @baseFont);
+    background-color: #fda0bf;
+    z-index: 10;
+
+    .classify {
+        width: (30rem / @baseFont);
+        height: (50rem / @baseFont);
+        background: url(../img/fenlei.png) no-repeat;
+        background-size: (30rem / @baseFont) (50rem / @baseFont);
+        margin: (20rem /@baseFont) (25rem / @baseFont) (7rem / @baseFont) (24rem / @baseFont);
+    }
+
+    .search {
+        flex: 1;
+        margin: (10rem / @baseFont);
+        background-color: rgb(255, 255, 255);
+        border-radius: 50px;
+        line-height: (50rem / @baseFont);
+        text-align: center;
+
+        >a {
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            outline: 0;
+            font-size: (20rem / @baseFont);
+            font-weight: 1.76rem;
+        }
+
+        .search-icon {
+            width: (30rem / @baseFont);
+            height: (30rem / @baseFont);
+            // background: url(../img/search.png) no-repeat;
+            background-color: orange;
+            // background-size:(30rem / @baseFont) (30rem / @baseFont) ;
+        }
+    }
+
+    .login {
+        width: (40rem / @baseFont);
+        height: (50rem / @baseFont);
+        margin: (20rem / @baseFont);
+        background: url(../img/denglu.png) no-repeat;
+        background-size: (40rem / @baseFont) (50rem / @baseFont);
+    }
+}
+
+//轮播图
+.swiper-box {
+    margin-top: (88rem / @baseFont);
+    padding: 0 10px;
+    background-image: linear-gradient(#fda0bf -10%, #F7EBED);
+
+    .swiper-container {
+        width: 100%;
+
+        height: (300rem / @baseFont);
+
+        .swiper-slide {
+            border-radius: 15px;
+            overflow: hidden;
+
+            a {
+                >img {
+                    width: 100%;
+                    height: (300rem / @baseFont);
+                }
+            }
+        }
+
+        .swiper-pagination {
+            >span {
+                width: (10rem / @baseFont);
+                height: (5rem / @baseFont);
+            }
+        }
+    }
+}
+
+//优惠券
+.coupon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    .coupon-itme {
+        flex: 1;
+
+        >img {
+            width: 7.5rem;
+            height: 3.9855rem;
+        }
+    }
+}
+
+//导航栏
+.nvaigator {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: flex-start;
+
+    .nva-itme {
+        width: 20%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        >img {
+            width: 1.68rem;
+            height: 1.68rem;
+        }
+
+        span {
+            font-size: .44rem;
+        }
+    }
+}
+
+//大礼包
+.dalibao {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: flex-start;
+    margin-top: (10rem / @baseFont);
+
+    .dalibao-itme1 {
+        flex: 2;
+
+        >img {
+            width: 100%;
+        }
+    }
+
+    .dalibao-itme2 {
+        flex: 1;
+
+        >img {
+            width: 100%;
+        }
+    }
+
+}
+
+//商品
+.shop {
+    padding: 0 10px;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    background-color: #FFFFFF;
+    .shop-box:first-child {
+        border-right: solid 1px rgba(226, 226, 226, .5);
+    }
+
+    .shop-box {
+        width: 49%;
+
+        .itme-title {
+            font-weight: 700;
+            font-size: .56rem;
+            letter-spacing: 0;
+            line-height: .8rem;
+            overflow: hidden;
+            max-width: 3.5rem;
+            height: .8rem;
+            margin: 0.36rem 0.16rem 0 0.48rem;
+            color: #333;
+        }
+
+        // .itme-time {
+        //     font-weight: 700;
+        //     font-size: .56rem;
+        // }
+
+        .itme-subheading {
+            font-size: .48rem;
+            color: #999;
+            overflow: hidden;
+            margin: 0.08rem 0 0 0.48rem;
+            width: 6rem;
+            height: 0.6rem;
+            line-height: 0.6rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-top: .08rem;
+        }
+
+        .itme-img {
+            width: 100%;
+            height: (130rem / @baseFont);
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+
+            >img {
+                width: (120rem / @baseFont);
+                height: (120rem / @baseFont);
+            }
+        }
+
+    }
+
+    .shop-footer {
+        width: 100%;
+        height: 3.44rem;
+        background: #FFF;
+        border-top: solid 1px rgba(226, 226, 226, .5);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+
+        .footer-itme {
+            width: 3.46rem;
+            height: 3.44rem;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+
+            .itme-title {
+                font-weight: 700;
+                font-size: .56rem;
+                letter-spacing: 0;
+                line-height: .8rem;
+                overflow: hidden;
+                max-width: 3.5rem;
+                height: .8rem;
+                margin: 0.36rem 0.16rem 0 0.48rem;
+                color: #333;
+            }
+
+            .itme-subheading {
+                font-size: .48rem;
+                color: #999;
+                overflow: hidden;
+                margin: 0.08rem 0 0 0.48rem;
+                width: 6rem;
+                height: 0.6rem;
+                line-height: 0.6rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                margin-top: .08rem;
+            }
+
+        }
+
+        .footer-itme2 {
+            width: 2.7rem;
+            height: 3.44rem;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            >img {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            span {
+                font-size: .44rem;
+                text-align: center;
+            }
+        }
+    }
+
+
+}

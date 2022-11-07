@@ -1,0 +1,142 @@
+{
+  "id": "2383701",
+  "name": "base项目",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15771261",
+      "name": "缩进",
+      "font_class": "suojin",
+      "unicode": "e7f7",
+      "unicode_decimal": 59383
+    },
+    {
+      "icon_id": "15771262",
+      "name": "展开",
+      "font_class": "zhankai",
+      "unicode": "e7f8",
+      "unicode_decimal": 59384
+    },
+    {
+      "icon_id": "15771265",
+      "name": "关闭",
+      "font_class": "guanbi1",
+      "unicode": "e7fb",
+      "unicode_decimal": 59387
+    },
+    {
+      "icon_id": "15771307",
+      "name": "密码",
+      "font_class": "mima",
+      "unicode": "e807",
+      "unicode_decimal": 59399
+    },
+    {
+      "icon_id": "15952565",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e818",
+      "unicode_decimal": 59416
+    },
+    {
+      "icon_id": "18061076",
+      "name": "密码-开",
+      "font_class": "mima-kai",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "18061077",
+      "name": "密码-关",
+      "font_class": "mima-guan",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "18061078",
+      "name": "验证码",
+      "font_class": "yanzhengma",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "18061079",
+      "name": "登录",
+      "font_class": "zhanghao1",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "20163210",
+      "name": "上",
+      "font_class": "shang",
+      "unicode": "e8a7",
+      "unicode_decimal": 59559
+    },
+    {
+      "icon_id": "20163214",
+      "name": "右",
+      "font_class": "you",
+      "unicode": "e8ab",
+      "unicode_decimal": 59563
+    },
+    {
+      "icon_id": "20163216",
+      "name": "左",
+      "font_class": "zuo",
+      "unicode": "e8ad",
+      "unicode_decimal": 59565
+    },
+    {
+      "icon_id": "20163219",
+      "name": "下",
+      "font_class": "xia",
+      "unicode": "e8af",
+      "unicode_decimal": 59567
+    },
+    {
+      "icon_id": "20255377",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "e8b8",
+      "unicode_decimal": 59576
+    },
+    {
+      "icon_id": "1263379",
+      "name": "规范",
+      "font_class": "guifan",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "1604926",
+      "name": "插件",
+      "font_class": "chajian",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    },
+    {
+      "icon_id": "6437020",
+      "name": "方法",
+      "font_class": "fangfa",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
+      "icon_id": "7775534",
+      "name": "搭建站点 ",
+      "font_class": "dajianzhandian",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "9086084",
+      "name": "组件",
+      "font_class": "zujian",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}

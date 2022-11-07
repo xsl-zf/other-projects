@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../modules/layui-v2.6.6/layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="../../public/css/public.css" />
+		<title></title>
+	</head>
+	<body>
+		<div class="layui-card">
+			
+			<div class="layui-card-body">
+				<form class="layui-form" action="" lay-filter="example">
+					<div class="layui-form-item">
+						<label class="layui-form-label">省会</label>
+						<div class="layui-input-inline">
+							<select name="area" id="area" lay-filter="area">
+								<option value="">请选择</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">街道</label>
+						<div class="layui-input-inline">
+							<select name="street" id="street" lay-filter="street">
+								
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">社区</label>
+						<div class="layui-input-inline">
+							<select name="community" id="community" lay-filter="community">
+								
+							</select>
+						</div>
+					</div>
+					<button type="button" class="btn-blue" id="btn_getData">取值</button>
+					<button type="reset" class="btn-green" id="btn_reset">重置</button>
+				</form>
+			</div>
+		</div>
+
+		<script src="../../modules/layui-v2.6.6/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="../../public/js/public.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="../../plugins/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			layui.use(['layer','form'], function() {
+				var form = layui.form;
+				var layer = layui.layer;
+
+				$.ajax({
+					type: "get",
+					url: "./js/liandong.json",
+					datatype: 'json',
+					success: function(data) {
+						console.log(data);
+						var province = [];
+						var city = [];
+						var counties = [];
+						var pstr = "";
+						var cstr = "";
+						//遍历数据
+						$.each(data, function(i, items) {
+							// console.log(i);
+							province[i] = items.province;//拿到数据省份
+							pstr = "<option>" + province[i] + "</option>";
+							$("#area").append(pstr);//渲染省份下拉框
+							city[i] = items.cities;//拿到省份对应的城市数组
+							
+							// console.log(city[i])
+							form.render();
+						});
+						//监听第一个下拉框,同时渲染第二个下拉框
+						form.on('select(area)', function(data) {
+							// console.log(data);
+							$("#street").empty();//清除残留数据
+							$("#community").empty();
+							for (i = 0; i < province.length; i++) {//遍历省份,
+								if (province[i] == data.value) {//取值和用户选中的数据做对比,
+									for (a = 0; a < city[i].length; a++) {//取出选中省份的下标,根据下标遍历出城市数据
+										var cityname = city[i][a].city;//选出城市数据
+										cstr = "<option></option><option>" + cityname + "</option>";
+										counties[a] = city[i][a].counties;//存储区级数据
+										$("#street").append(cstr);
+										form.render();
+									}
+								}
+							}
+						})
+						//监听第二个下拉框,渲染第三个下拉框
+						form.on('select(street)', function(data) {
+							// console.log(data);
+							$("#community").empty();//清除残留数据
+							for(i = 0; i< city.length;i++){//遍历城市数据
+								for(a = 0;a< city[i].length;a++){
+									var cityname = city[i][a].city;
+									if(cityname == data.value){//取值和用户选中的数据做对比
+										// counties[a]
+										// console.log(counties[a]);
+										for(b = 0;b<counties[a].length;b++){//遍历所选城市的区级数据
+											var countie = counties[a][b];
+											// console.log(countie)
+											var str = "<option></option><option>"+countie+"</option>"
+											$("#community").append(str);
+											form.render();
+										}
+									}
+								}
+							}
+								
+							
+						})
+					}
+				});
+				//取值
+				$("#btn_getData").click(function(){
+					var data = form.val("example");
+					layer.alert(JSON.stringify(data));
+				});
+				
+
+			})
+		</script>
+	</body>
+</html>

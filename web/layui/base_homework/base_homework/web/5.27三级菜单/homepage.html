@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>电力北斗安监应用</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../../public/css/public.css"> -->
+    <link rel="stylesheet" href="../../modules/layui-v2.6.6/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./css/homepage.css">
+    <link rel="stylesheet" href="../../public/css/public.css">
+</head>
+
+<body>
+
+    <div class="main-index">
+        <!-- 头部 -->
+        <div class="main-header">
+            <!-- logo -->
+            <!-- <div class="logo"><img src="./images/logo.png" alt=""></div> -->
+            <!-- 大标题 -->
+            <div class="big-title">电力北斗安监应用</div>
+            <!-- 时间 -->
+            <div class="time-box" id="time"></div>
+            <!-- 用户 -->
+            <div class="user-box">
+                <ul class="layui-nav">
+                    <li class="layui-nav-item" lay-unselect="">
+                        <a href="javascript:;"><img src="" class="layui-nav-img"><span>张三</span> </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">修改密码</a></dd>
+                            <dd><a href="">退出</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- 菜单 -->
+        <div class="main-menu menu-1">
+            <ul class="layui-nav layui-nav-tree" lay-filter="test" id="menu_1">
+
+            </ul>
+        </div>
+        <!-- iframe -->
+        <!-- <div class="main-body ">
+            目前默认首页是-人员位置显示
+            <iframe src="../power_operation/site_supervision/Personnel_location_display.html" frameborder="0"
+                name="iframes"></iframe>
+        </div> -->
+
+    </div>
+
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="../../modules/layui-v2.6.6/layui/layui.js"></script>
+    <!-- <script src="../../public/js/aes.js"></script> -->
+    <!-- <script src="../../public/js/url.js"></script> -->
+    <script src="../../public/js/public.js"></script>
+    <script src="./js/idTime.js"></script>
+    <script src="./js/homepage.js"></script>
+
+</body>
+
+</html>

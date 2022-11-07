@@ -1,0 +1,405 @@
+@import url("./reset.css");
+@import url("./iconfont/iconfont.css");
+@import url("../../modules/layui/css/layui.css");
+@import url("../../plugins/swiper/swiper.css");
+@import url("./theme.css");
+
+//大标题字体
+@font-face {
+    font-family: bigtitle;
+    src: url('../css/font/FZDBSJW.TTF');
+}
+
+.public-theme-blue {
+    // --color-title: #eeeeee;
+    // --color-border: #315280;
+    // --color-bg: #162947;
+
+    // .theme(green)
+}
+
+.hide {
+    display: none;
+}
+
+
+// 主结构
+.main-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f5f5f5;
+    display: flex;
+    background: url(../images/home_bg.png) no-repeat;
+    background-size: 100% 100%;
+
+    .menu-box {
+        margin: auto;
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+
+
+        li {
+            width: 320px;
+            height: 210px;
+            border-radius: 10px;
+            box-shadow: 2px 0 2px 2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+
+            &:hover {
+
+                img {
+
+                    transform: scale(1.2);
+                }
+            }
+
+            img {
+                transition: all 1s ease;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                width: 100%;
+
+            }
+
+            p {
+                position: absolute;
+                bottom: 0;
+                z-index: 2;
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                background: var(--public-bg-color);
+                text-align: center;
+                color: var(--public-text-color);
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+
+
+    }
+}
+
+// 主结构
+.main-demo {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: inline-block;
+    background: #fff;
+}
+
+// 主结构
+.main-table {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    display: inline-block;
+    background: #fff;
+}
+
+// layui-导航菜单（左侧菜单）
+.menu-1 {
+    .layui-nav-tree {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background: #fff;
+        box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.1);
+        font-family: PingFangSC-Regular, PingFang SC;
+    }
+
+    // 一级菜单默认+未展开
+    .layui-nav-tree .layui-nav-item a {
+
+        color: rgba(0, 0, 0, 0.65);
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+    // 一级菜单展开
+    .layui-nav-itemed>a,
+    .layui-nav-tree .layui-nav-title a,
+    .layui-nav-tree .layui-nav-title a:hover {
+        color: var(--public-layui-text) !important;
+        background: transparent;
+    }
+
+    // 一级菜单倒三角-向下
+    .layui-nav .layui-nav-more {
+        border-top-color: rgba(0, 0, 0, 0.65);
+    }
+
+    // 一级菜单倒三角-向上
+    .layui-nav .layui-nav-mored,
+    .layui-nav-itemed>a .layui-nav-more {
+        border-color: transparent transparent rgba(0, 0, 0, 0.65);
+    }
+
+    // 一级菜单鼠标滑过样式
+    .layui-nav-tree .layui-nav-item a:hover {
+        color: rgba(0, 0, 0, 0.85);
+        background-color: transparent
+    }
+
+    // 二级菜单鼠标滑过样式
+    .layui-nav-tree .layui-nav-child,
+    .layui-nav-tree .layui-nav-child a:hover {
+        color: var(--public-layui-text);
+    }
+
+    // 被选中样式
+    .layui-nav-tree .layui-nav-child dd.layui-this,
+    .layui-nav-tree .layui-nav-child dd.layui-this a,
+    .layui-nav-tree .layui-this,
+    .layui-nav-tree .layui-this>a,
+    .layui-nav-tree .layui-this>a:hover {
+        background: rgba(0, 0, 0, 0.04);
+        color: var(--public-layui-text);
+    }
+
+    // 展开的二级菜单
+    .layui-nav-itemed>.layui-nav-child {
+        background-color: rgba(0, 0, 0, .04) !important;
+
+        dd {
+            a {
+                padding: 0 0 0 25px !important;
+            }
+
+            ol {
+                a {
+                    padding: 0 0 0 35px !important;
+                }
+            }
+        }
+
+    }
+
+    // 左侧的光标条
+    .layui-nav-tree .layui-nav-bar {
+        background-color: var(--public-layui-bg);
+    }
+}
+
+
+// 滚动条
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #ccc;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+// layui-分割线
+.layui-field-title {
+    border-width: 4px 0 0;
+}
+
+// layui-分割线
+.layui-elem-quote {
+    border-left: 5px solid var(--public-layui-bg);
+}
+
+// layui-卡片面板
+.layui-card {
+    border: 2px solid var(--public-layui-bg);
+
+    .layui-card-header {
+        color: var(--public-layui-text);
+    }
+}
+
+// layui-静态表格
+.layui-table {
+    th {
+        font-weight: bold;
+    }
+}
+
+// 按钮
+button:hover {
+    opacity: 0.8;
+}
+
+button {
+    outline: none;
+    border: 0;
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+
+// 蓝色按钮
+.btn-blue {
+    height: 32px;
+    padding: 0 18px;
+    height: 32px;
+    background: rgba(24, 144, 255, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    color: #fff;
+}
+
+// 绿色按钮
+.btn-green {
+    height: 32px;
+    padding: 0 18px;
+    text-align: center;
+    border-radius: 2px;
+    background: #31B3AE;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    color: #fff;
+}
+
+// 白色按钮
+.btn-white {
+    height: 32px;
+    padding: 0 18px;
+    height: 32px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(221, 221, 221, 1);
+    border-radius: 2px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+// 橙色按钮
+.btn-orange {
+    height: 32px;
+    padding: 0 18px;
+    text-align: center;
+    border-radius: 2px;
+    background: #FFA940;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    color: #fff;
+}
+
+// 红色按钮
+.btn-red {
+    height: 32px;
+    padding: 0 18px;
+    text-align: center;
+    border-radius: 2px;
+    background: #FF5722;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    color: #fff;
+}
+
+// 蓝字按钮
+.btn-blue-font {
+    padding: 0 10px;
+    height: 32px;
+    background: rgba(230, 247, 255, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(92, 193, 255, 1);
+    cursor: pointer;
+    color: #1890FF;
+}
+
+// 绿字按钮
+.btn-green-font {
+    height: 32px;
+    padding: 0 10px;
+    text-align: center;
+    background: #F6FFED;
+    border-radius: 2px;
+    border: 1px solid #8CDE4D;
+    cursor: pointer;
+    color: #52C41A;
+}
+
+// 橙字按钮
+.btn-orange-font {
+    height: 32px;
+    padding: 0 10px;
+    text-align: center;
+    border-radius: 2px;
+    background: rgba(255, 251, 230, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(243, 178, 95, 1);
+    cursor: pointer;
+    color: #FA9514;
+}
+
+// 红字按钮
+.btn-red-font {
+    height: 32px;
+    padding: 0 10px;
+    text-align: center;
+    background: rgba(255, 241, 240, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(255, 119, 112, 1);
+    cursor: pointer;
+    color: #EF232E;
+}
+
+//文件下载默认颜色
+.public-down {
+    color: #1890ff;
+    text-decoration: underline;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    &:hover {
+        color: red;
+    }
+}
+
+// xm多选框不换行
+xm-select>.xm-body .xm-toolbar .toolbar-tag {
+    white-space: nowrap !important;
+}
+
+.layui-form-label {
+    width: 100px;
+}
+
+.layui-elem-field legend {
+    font-weight: 500;
+}
+
+// layui表格里的按钮相对较低
+.layui-table {
+    button {
+        height: 28px;
+    }
+}
+
+// layer弹出层
+.layer-box {
+    padding: 20px;
+}
