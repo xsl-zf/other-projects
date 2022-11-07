@@ -20,7 +20,6 @@ import re
 
 # 编写程序，统计字符串词个数，词存放在字典中，由词分隔的字符串统一计算其他。
 
-
 str = "Keep your friends close,but your enemies closer."
 lst = re.findall(r'\b\w.+?\b', str)
 print(lst)
@@ -33,5 +32,5 @@ for i in range(0, splitNum):
         dict1[str1] = n + 1
     else:
         dict1[str1] = 1#将所有元素值都赋值1
-print(dict1)
+
 print("分隔符个数：", splitNum)
