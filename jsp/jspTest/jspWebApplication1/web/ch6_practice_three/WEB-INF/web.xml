@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<web-app>
+   <servlet>
+       <servlet-name>handleForward</servlet-name>
+       <servlet-class>moon.sun.HandleForward_Servlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+        <servlet-name>handleForward</servlet-name>
+        <url-pattern>/handleForward</url-pattern>
+   </servlet-mapping>
+    <servlet>
+       <servlet-name>personOne</servlet-name>
+       <servlet-class>moon.sun.PersonOne_Servlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+        <servlet-name>personOne</servlet-name>
+        <url-pattern>/personOne</url-pattern>
+   </servlet-mapping>
+    <servlet>
+       <servlet-name>personTwo</servlet-name>
+       <servlet-class>moon.sun.PersonTwo_Servlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+        <servlet-name>personTwo</servlet-name>
+        <url-pattern>/personTwo</url-pattern>
+   </servlet-mapping>
+</web-app>

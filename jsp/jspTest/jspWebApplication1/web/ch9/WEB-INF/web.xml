@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<web-app>
+    <!--  以下是web.xml文件新添加的内容 -->
+    <servlet>
+        <servlet-name>handleFile</servlet-name>
+        <servlet-class>handle.data.Example9_2_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>handleFile</servlet-name>
+        <url-pattern>/handleFile</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>upFile</servlet-name>
+        <servlet-class>handle.data.Example9_4_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>upFile</servlet-name>
+        <url-pattern>/upFile</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>loadFile</servlet-name>
+        <servlet-class>handle.data.Example9_5_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loadFile</servlet-name>
+        <url-pattern>/loadFile</url-pattern>
+    </servlet-mapping>
+</web-app>

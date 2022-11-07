@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<web-app>
+    <!--  以下是web.xml文件新添加的内容 -->
+    <servlet>
+        <servlet-name>addMenu</servlet-name>
+        <servlet-class>handle.data.HandleMenu_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addMenu</servlet-name>
+        <url-pattern>/addMenu</url-pattern>
+    </servlet-mapping>
+</web-app>

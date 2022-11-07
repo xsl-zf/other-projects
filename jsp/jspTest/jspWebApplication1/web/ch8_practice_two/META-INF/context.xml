@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Context>
+  <Resource 
+    name = "studentConn"
+    type ="javax.sql.DataSource"
+    driverClassName = "com.mysql.cj.jdbc.Driver"
+    url = "jdbc:mysql://127.0.0.1:3306/Student?
+        &amp;serverTimezone=CST&amp;characterEncoding=utf-8"
+    username ="root"
+    password =""
+    maxActive ="5"
+    maxIdle ="5"
+    minIdle ="1"
+    maxWait ="5000" 
+   /> 
+</Context>

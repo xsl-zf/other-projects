@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<web-app>
+    <!--  以下是web.xml文件新添加的内容 -->
+    <servlet>
+        <servlet-name>query</servlet-name>
+        <servlet-class>handle.data.Query_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>query</servlet-name>
+        <url-pattern>/query</url-pattern>
+    </servlet-mapping>
+    <!--  以下是web.xml文件新添加的内容 -->
+    <servlet>
+        <servlet-name>givePaper</servlet-name>
+        <servlet-class>handle.data.GiveTestPaper_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>givePaper </servlet-name>
+        <url-pattern>/givePaper </url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>handleMess</servlet-name>
+        <servlet-class>handle.data.HandleMess_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>handleMess </servlet-name>
+        <url-pattern>/handleMess </url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>giveScore</servlet-name>
+        <servlet-class>handle.data.GiveScore_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>giveScore </servlet-name>
+        <url-pattern>/giveScore </url-pattern>
+    </servlet-mapping>
+
+</web-app>

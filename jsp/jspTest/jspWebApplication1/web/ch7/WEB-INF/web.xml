@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<web-app>
+    <!--  以下是web.xml文件新添加的内容 -->
+    <servlet>
+        <servlet-name>computer</servlet-name>
+        <servlet-class>handle.data.Example7_1_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>computer</servlet-name>
+        <url-pattern>/computer</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>handleExpress</servlet-name>
+        <servlet-class>handle.data.ExpressWish_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>handleExpress</servlet-name>
+        <url-pattern>/handleExpress</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>shopping</servlet-name>
+        <servlet-class>handle.data.Example7_2_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>shopping</servlet-name>
+        <url-pattern>/shopping</url-pattern>
+    </servlet-mapping>
+</web-app>

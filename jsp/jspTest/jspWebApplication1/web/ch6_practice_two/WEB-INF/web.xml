@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<web-app>
+   <servlet>
+       <servlet-name>lottery</servlet-name>
+       <servlet-class>moon.sun.Lottery_Servlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+        <servlet-name>lottery</servlet-name>
+        <url-pattern>/lottery</url-pattern>
+   </servlet-mapping>
+</web-app>

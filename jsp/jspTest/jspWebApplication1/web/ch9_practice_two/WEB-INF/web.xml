@@ -1,0 +1,11 @@
+﻿<web-app>
+    <!--  以下是web.xml文件新添加的内容 -->
+    <servlet>
+        <servlet-name>readFile</servlet-name>
+        <servlet-class>handle.data.ReadFile_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>readFile </servlet-name>
+        <url-pattern>/readFile </url-pattern>
+    </servlet-mapping>
+</web-app>
